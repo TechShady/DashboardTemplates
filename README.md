@@ -1,10 +1,10 @@
 # DashboardTemplates
 Dynatrace Dashboards that are generic enough to use as a starting point with any customer.<br />  
-They are not limited to specific entities and work well with Management Zones.<br /><br />
+They are not limited to specific entities and work well with Management Zones.<br />
 
-If you would like to view these dashboards, I can give you readonly access to my personal tenant.<br /><br />
+If you would like to view these dashboards, I can give you readonly access to my personal tenant.<br />
 
-The following list will help you identify dashboards by ID:
+The following list will help you identify dashboards by ID:<br />
 00000000-dddd-bbbb-ffff-000000000001 TEMPLATE: Overview<br />
 00000000-dddd-bbbb-ffff-000000000002 TEMPLATE: Applications<br />
 00000000-dddd-bbbb-ffff-000000000003 TEMPLATE: Synthetics<br />
