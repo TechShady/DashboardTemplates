@@ -8,11 +8,11 @@
     "id": "00000000-dddd-bbbb-ffff-000000000010",
     "dashboardMetadata": {
         "name": "TEMPLATE: Tomcat Monitoring",
-        "shared": false,
+        "shared": true,
         "owner": "dave.mauney@dynatrace.com",
         "sharingDetails": {
             "linkShared": true,
-            "published": false
+            "published": true
         },
         "dashboardFilter": {
             "timeframe": "",

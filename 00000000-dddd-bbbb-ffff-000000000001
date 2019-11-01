@@ -15,7 +15,7 @@
             "published": true
         },
         "dashboardFilter": {
-            "timeframe": "l_7_DAYS",
+            "timeframe": "",
             "managementZone": null
         }
     },
@@ -33,7 +33,7 @@
             "tileFilter": {
                 "managementZone": null
             },
-            "markdown": "[Hosts](https://dad74988.live.dynatrace.com/#dashboard;id=00000000-dddd-bbbb-ffff-000000000006;gtf=l_2_HOURS;gf=all)"
+            "markdown": "[Hosts](#dashboard;id=00000000-dddd-bbbb-ffff-000000000006;gtf=l_2_HOURS;gf=all)"
         },
         {
             "name": "Host health",
@@ -128,7 +128,7 @@
             "tileFilter": {
                 "managementZone": null
             },
-            "markdown": "[Databases](https://dad74988.live.dynatrace.com/#dashboard;gtf=defaultTimeFrame;gf=all;id=00000000-dddd-bbbb-ffff-000000000005)"
+            "markdown": "[Databases](#dashboard;gtf=defaultTimeFrame;gf=all;id=00000000-dddd-bbbb-ffff-000000000005)"
         },
         {
             "name": "Markdown",
@@ -143,7 +143,7 @@
             "tileFilter": {
                 "managementZone": null
             },
-            "markdown": "[Services](https://dad74988.live.dynatrace.com/#dashboard;id=00000000-dddd-bbbb-ffff-000000000004;gtf=l_2_HOURS;gf=all)"
+            "markdown": "[Services](#dashboard;id=00000000-dddd-bbbb-ffff-000000000004;gtf=l_2_HOURS;gf=all)"
         },
         {
             "name": "Markdown",
@@ -158,7 +158,7 @@
             "tileFilter": {
                 "managementZone": null
             },
-            "markdown": "[Synthetics](https://dad74988.live.dynatrace.com/#dashboard;id=00000000-dddd-bbbb-ffff-000000000003;gtf=l_2_HOURS;gf=all)"
+            "markdown": "[Synthetics](#dashboard;id=00000000-dddd-bbbb-ffff-000000000003;gtf=l_2_HOURS;gf=all)"
         },
         {
             "name": "Markdown",
@@ -173,7 +173,7 @@
             "tileFilter": {
                 "managementZone": null
             },
-            "markdown": "[Applications](https://dad74988.live.dynatrace.com/#dashboard/dashboard;id=00000000-dddd-bbbb-ffff-000000000002;gtf=l_2_HOURS)"
+            "markdown": "[Applications](#dashboard/dashboard;id=00000000-dddd-bbbb-ffff-000000000002;gtf=l_2_HOURS)"
         },
         {
             "name": "Top web applications",
@@ -230,7 +230,7 @@
             "tileFilter": {
                 "managementZone": null
             },
-            "markdown": "More Details\n\n[Processes](https://dad74988.live.dynatrace.com/#dashboard;id=00000000-dddd-bbbb-ffff-000000000007)\n\n[Java Monitoring](https://dad74988.live.dynatrace.com/#dashboard;id=00000000-dddd-bbbb-ffff-000000000008)\n\n[.Net Monitoring](https://dad74988.live.dynatrace.com/#dashboard;id=00000000-dddd-bbbb-ffff-000000000009)\n\n[Tomcat Monitoring](https://dad74988.live.dynatrace.com/#dashboard;id=00000000-dddd-bbbb-ffff-000000000010)"
+            "markdown": "More Details\n\n[Processes](#dashboard;id=00000000-dddd-bbbb-ffff-000000000007)\n\n[Java Monitoring](#dashboard;id=00000000-dddd-bbbb-ffff-000000000008)\n\n[.Net Monitoring](#dashboard;id=00000000-dddd-bbbb-ffff-000000000009)\n\n[Tomcat Monitoring](#dashboard;id=00000000-dddd-bbbb-ffff-000000000010)"
         }
     ]
 }

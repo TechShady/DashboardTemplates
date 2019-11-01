@@ -8,14 +8,14 @@
     "id": "00000000-dddd-bbbb-ffff-000000000007",
     "dashboardMetadata": {
         "name": "TEMPLATE: Processes",
-        "shared": false,
+        "shared": true,
         "owner": "dave.mauney@dynatrace.com",
         "sharingDetails": {
-            "linkShared": false,
-            "published": false
+            "linkShared": true,
+            "published": true
         },
         "dashboardFilter": {
-            "timeframe": "l_7_DAYS",
+            "timeframe": "",
             "managementZone": null
         }
     },

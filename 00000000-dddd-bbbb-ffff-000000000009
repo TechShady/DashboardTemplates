@@ -8,11 +8,11 @@
     "id": "00000000-dddd-bbbb-ffff-000000000009",
     "dashboardMetadata": {
         "name": "TEMPLATE: .NET Monitoring",
-        "shared": false,
+        "shared": true,
         "owner": "dave.mauney@dynatrace.com",
         "sharingDetails": {
             "linkShared": true,
-            "published": false
+            "published": true
         },
         "dashboardFilter": {
             "timeframe": "",

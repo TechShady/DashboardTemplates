@@ -8,14 +8,14 @@
     "id": "00000000-dddd-bbbb-ffff-000000000008",
     "dashboardMetadata": {
         "name": "TEMPLATE: Java Monitoring",
-        "shared": false,
+        "shared": true,
         "owner": "dave.mauney@dynatrace.com",
         "sharingDetails": {
-            "linkShared": false,
-            "published": false
+            "linkShared": true,
+            "published": true
         },
         "dashboardFilter": {
-            "timeframe": "l_24_HOURS",
+            "timeframe": "",
             "managementZone": null
         }
     },
