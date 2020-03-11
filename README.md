@@ -17,8 +17,6 @@ The following list will help you identify dashboards by ID:<br />
 00000000-dddd-bbbb-ffff-000000000010 TEMPLATE: Tomcat Monitoring<br />
 
 Notes: <br />
-The Overview dashboard provides drilldowns and may need some adjustments in the markdown tiles for best results.<br />
+The Overview dashboard provides drilldowns to child dashboards via markdown tiles.<br />
 You might want to modify the owner to your email address or a customer email address.<br />
-
-
-
+Version differences can be an issue, so select the most recent version equal or prior to the version of the cluster/tenant you are importing into <br />
