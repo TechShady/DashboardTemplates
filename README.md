@@ -19,4 +19,5 @@ The following list will help you identify dashboards by ID:<br />
 Notes: <br />
 The Overview dashboard provides drilldowns to child dashboards via markdown tiles.<br />
 You might want to modify the owner to your email address or a customer email address.<br />
-Version differences can be an issue, so select the most recent version equal or prior to the version of the cluster/tenant you are importing into <br />
+Version differences can be an issue, so select the most recent version equal or prior to the version of the cluster/tenant you are importing into. <br />
+Always use PUT rather than POST as the IDs are designed to remain static and PUT allows that. <br />
