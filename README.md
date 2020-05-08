@@ -4,6 +4,18 @@ They are not limited to specific entities and work well with Management Zones.<b
 
 If you would like to view these dashboards, I can give you readonly access to my personal tenant.<br />
 
+Screenshots:
+![Overview](images/Overview.png)
+![Applications](images/Applications.png)
+![Synthetics](images/Synthetics.png)
+![Services](images/Services.png)
+![Databases](images/Databases.png)
+![Hosts](images/Hosts.png)
+![Processes](images/Processes.png)
+![Java](images/Java.png)
+![.NET](images/.NET.png)
+![Tomcat](images/Tomcat.png)
+
 The following list will help you identify dashboards by ID:<br />
 00000000-dddd-bbbb-ffff-000000000001 TEMPLATE: Overview<br />
 00000000-dddd-bbbb-ffff-000000000002 TEMPLATE: Applications<br />
