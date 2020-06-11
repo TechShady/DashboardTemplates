@@ -357,7 +357,7 @@
                         {
                             "metric": "builtin:service.response.time",
                             "aggregation": "PERCENTILE",
-                            "percentile": 10,
+                            "percentile": 90,
                             "type": "LINE",
                             "entityType": "SERVICE",
                             "dimensions": [
@@ -409,7 +409,7 @@
                         {
                             "metric": "builtin:service.response.time",
                             "aggregation": "PERCENTILE",
-                            "percentile": 50,
+                            "percentile": 90,
                             "type": "LINE",
                             "entityType": "SERVICE",
                             "dimensions": [
