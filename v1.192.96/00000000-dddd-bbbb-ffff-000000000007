@@ -8,7 +8,7 @@
     },
     "id": "00000000-dddd-bbbb-ffff-000000000007",
     "dashboardMetadata": {
-        "name": "TEMPLATE: Processes",
+        "name": "${overviewName}: Processes",
         "shared": true,
         "owner": "dave.mauney@dynatrace.com",
         "sharingDetails": {
@@ -17,7 +17,10 @@
         },
         "dashboardFilter": {
             "timeframe": "",
-            "managementZone": null
+            "managementZone": {
+                "id": "${mz.id}",
+                "name": "${mz.name}"
+            }
         }
     },
     "tiles": [

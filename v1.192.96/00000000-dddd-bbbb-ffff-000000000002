@@ -7,7 +7,7 @@
     },
     "id": "00000000-dddd-bbbb-ffff-000000000002",
     "dashboardMetadata": {
-        "name": "TEMPLATE: Applications",
+        "name": "${overviewName}: Applications",
         "shared": true,
         "owner": "dave.mauney@dynatrace.com",
         "sharingDetails": {
@@ -16,7 +16,10 @@
         },
         "dashboardFilter": {
             "timeframe": "",
-            "managementZone": null
+            "managementZone": {
+                "id": "${mz.id}",
+                "name": "${mz.name}"
+            }
         }
     },
     "tiles": [
