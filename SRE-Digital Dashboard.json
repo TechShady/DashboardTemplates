@@ -1,0 +1,586 @@
+{
+    "metadata": {
+        "configurationVersions": [3],
+        "clusterVersion": "1.192.87.20200501-000127"
+    },
+    "id": "e8c80408-b76e-4ef6-9c26-dcf0cceea704",
+    "dashboardMetadata": {
+        "name": "${app.name} - Digital Dashboard",
+        "shared": false,
+        "owner": "lucas.hocker@dynatrace.com",
+        "sharingDetails": {
+            "linkShared": true,
+            "published": false
+        },
+        "dashboardFilter": {
+            "timeframe": "-24h to now"
+        }
+    },
+    "tiles": [{
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 38,
+            "left": 0,
+            "width": 1786,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "---"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 0,
+            "left": 0,
+            "width": 190,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "## \uD83D\uDEA6[SRE Dashboard](#dashboard;gtf=-24h%20to%20now;gf=all;id=27e6daaa-29e4-44b2-a3aa-148b80be3524)"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 0,
+            "left": 380,
+            "width": 228,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "## ➵  Digital Dashboard"
+    }, {
+        "name": "Bounce rate",
+        "tileType": "BOUNCE_RATE",
+        "configured": true,
+        "bounds": {
+            "top": 114,
+            "left": 304,
+            "width": 304,
+            "height": 304
+        },
+        "tileFilter": {},
+        "assignedEntities": ["${app.id}"]
+    }, {
+        "name": "Most used 3rd parties",
+        "tileType": "THIRD_PARTY_MOST_ACTIVE",
+        "configured": true,
+        "bounds": {
+            "top": 760,
+            "left": 304,
+            "width": 304,
+            "height": 304
+        },
+        "tileFilter": {},
+        "assignedEntities": ["${app.id}"],
+        "metric": "ACTION_COUNT"
+    }, {
+        "name": "User behavior",
+        "tileType": "SESSION_METRICS",
+        "configured": true,
+        "bounds": {
+            "top": 456,
+            "left": 304,
+            "width": 304,
+            "height": 304
+        },
+        "tileFilter": {},
+        "assignedEntities": ["${app.id}"]
+    }, {
+        "name": "Custom chart",
+        "tileType": "CUSTOM_CHARTING",
+        "configured": true,
+        "bounds": {
+            "top": 114,
+            "left": 646,
+            "width": 190,
+            "height": 152
+        },
+        "tileFilter": {},
+        "filterConfig": {
+            "type": "MIXED",
+            "customName": "Total",
+            "defaultName": "Custom chart",
+            "chartConfig": {
+                "legendShown": true,
+                "type": "SINGLE_VALUE",
+                "series": [{
+                    "metric": "${bookingmetric.id}",
+                    "aggregation": "COUNT",
+                    "type": "LINE",
+                    "entityType": "APPLICATION",
+                    "dimensions": [{
+                        "id": "1",
+                        "name": "bookingmessage",
+                        "values": ["${bookingmessage.value}"],
+                        "entityDimension": false
+                    }],
+                    "sortAscending": false,
+                    "aggregationRate": "TOTAL",
+                    "sortColumn": true
+                }],
+                "resultMetadata": {}
+            },
+            "filtersPerEntityType": {}
+        }
+    }, {
+        "name": "Custom chart",
+        "tileType": "CUSTOM_CHARTING",
+        "configured": true,
+        "bounds": {
+            "top": 266,
+            "left": 646,
+            "width": 1140,
+            "height": 266
+        },
+        "tileFilter": {},
+        "filterConfig": {
+            "type": "MIXED",
+            "customName": "Booking Volume Over Time",
+            "defaultName": "Custom chart",
+            "chartConfig": {
+                "legendShown": true,
+                "type": "TIMESERIES",
+                "series": [{
+                    "metric": "${bookingmetric.id}",
+                    "aggregation": "COUNT",
+                    "type": "LINE",
+                    "entityType": "APPLICATION",
+                    "dimensions": [{
+                        "id": "1",
+                        "name": "bookingmessage",
+                        "values": ["${bookingmessage.value}"],
+                        "entityDimension": false
+                    }],
+                    "sortAscending": false,
+                    "aggregationRate": "TOTAL",
+                    "sortColumn": true
+                }],
+                "resultMetadata": {
+                    "nullbuiltin:apps.web.action.count.load.browser|NONE|TOTAL|LINE|APPLICATION_METHOD": {
+                        "lastModified": 1590029606724,
+                        "customColor": "#7c38a1"
+                    },
+                    "nullbuiltin:apps.web.action.count.xhr.browser|NONE|TOTAL|LINE|APPLICATION_METHOD": {
+                        "lastModified": 1591418520484,
+                        "customColor": "#7c38a1"
+                    },
+                    "null¦bookingmessage»Your journey was booked successfully! Open the summary and print out the ticket's.»false${bookingmetric.id}|COUNT|TOTAL|LINE|APPLICATION": {
+                        "lastModified": 1591636564066,
+                        "customColor": "#7c38a1"
+                    },
+                    "APPLICATION-FF84B13099B75A08¦APPLICATION»APPLICATION-FF84B13099B75A08»true¦pagename»Order Confirmation Page»falsecalc:apps.web.meijerproduction.pagename|COUNT|TOTAL|BAR|APPLICATION": {
+                        "lastModified": 1588211770594,
+                        "customColor": "#7c38a1"
+                    }
+                }
+            },
+            "filtersPerEntityType": {}
+        }
+    }, {
+        "name": "Booking Volume - Inflow",
+        "tileType": "HEADER",
+        "configured": true,
+        "bounds": {
+            "top": 76,
+            "left": 836,
+            "width": 342,
+            "height": 38
+        },
+        "tileFilter": {}
+    }, {
+        "name": "Conversion Goals & Bounce Rate",
+        "tileType": "HEADER",
+        "configured": true,
+        "bounds": {
+            "top": 76,
+            "left": 152,
+            "width": 456,
+            "height": 38
+        },
+        "tileFilter": {}
+    }, {
+        "name": "Custom chart",
+        "tileType": "CUSTOM_CHARTING",
+        "configured": true,
+        "bounds": {
+            "top": 114,
+            "left": 1406,
+            "width": 190,
+            "height": 152
+        },
+        "tileFilter": {},
+        "filterConfig": {
+            "type": "MIXED",
+            "customName": "Avg Response Time",
+            "defaultName": "Custom chart",
+            "chartConfig": {
+                "legendShown": true,
+                "type": "SINGLE_VALUE",
+                "series": [{
+                    "metric": "builtin:apps.web.action.visuallyComplete.xhr.browser",
+                    "aggregation": "AVG",
+                    "type": "LINE",
+                    "entityType": "APPLICATION_METHOD",
+                    "dimensions": [],
+                    "sortAscending": false,
+                    "aggregationRate": "TOTAL",
+                    "sortColumn": true
+                }],
+                "resultMetadata": {}
+            },
+            "filtersPerEntityType": {
+                "APPLICATION_METHOD": {
+                    "SPECIFIC_ENTITIES": ["${method-7.id}"]
+                }
+            }
+        }
+    }, {
+        "name": "User breakdown",
+        "tileType": "USERS",
+        "configured": true,
+        "bounds": {
+            "top": 760,
+            "left": 0,
+            "width": 304,
+            "height": 304
+        },
+        "tileFilter": {},
+        "assignedEntities": ["${app.id}"]
+    }, {
+        "name": "Web application",
+        "tileType": "APPLICATION",
+        "configured": true,
+        "bounds": {
+            "top": 456,
+            "left": 0,
+            "width": 304,
+            "height": 304
+        },
+        "tileFilter": {},
+        "assignedEntities": ["${app.id}"]
+    }, {
+        "name": "Site Peformance & Usage Analytics",
+        "tileType": "HEADER",
+        "configured": true,
+        "bounds": {
+            "top": 418,
+            "left": 152,
+            "width": 380,
+            "height": 38
+        },
+        "tileFilter": {}
+    }, {
+        "name": "Conversion goal",
+        "tileType": "UEM_CONVERSIONS_PER_GOAL",
+        "configured": true,
+        "bounds": {
+            "top": 114,
+            "left": 0,
+            "width": 304,
+            "height": 304
+        },
+        "tileFilter": {},
+        "assignedEntities": ["${app.id}"],
+        "metric": "82b2a8ca-d705-411e-b8d0-64e3dcc50d2f"
+    }, {
+        "name": "Custom chart",
+        "tileType": "CUSTOM_CHARTING",
+        "configured": true,
+        "bounds": {
+            "top": 114,
+            "left": 1596,
+            "width": 190,
+            "height": 152
+        },
+        "tileFilter": {},
+        "filterConfig": {
+            "type": "MIXED",
+            "customName": "Total",
+            "defaultName": "Custom chart",
+            "chartConfig": {
+                "legendShown": true,
+                "type": "SINGLE_VALUE",
+                "series": [{
+                    "metric": "${bookingmetric.id}",
+                    "aggregation": "COUNT",
+                    "type": "LINE",
+                    "entityType": "APPLICATION",
+                    "dimensions": [{
+                        "id": "1",
+                        "name": "bookingmessage",
+                        "values": ["${error_msg}"],
+                        "entityDimension": false
+                    }],
+                    "sortAscending": false,
+                    "aggregationRate": "TOTAL",
+                    "sortColumn": true
+                }],
+                "resultMetadata": {}
+            },
+            "filtersPerEntityType": {}
+        }
+    }, {
+        "name": "Booking Errors",
+        "tileType": "HEADER",
+        "configured": true,
+        "bounds": {
+            "top": 76,
+            "left": 1596,
+            "width": 190,
+            "height": 38
+        },
+        "tileFilter": {}
+    }, {
+        "name": "Avg ($$$)",
+        "tileType": "HEADER",
+        "configured": true,
+        "bounds": {
+            "top": 76,
+            "left": 1254,
+            "width": 152,
+            "height": 38
+        },
+        "tileFilter": {}
+    }, {
+        "name": "Response Time",
+        "tileType": "HEADER",
+        "configured": true,
+        "bounds": {
+            "top": 76,
+            "left": 1406,
+            "width": 190,
+            "height": 38
+        },
+        "tileFilter": {}
+    }, {
+        "name": "Custom chart",
+        "tileType": "CUSTOM_CHARTING",
+        "configured": true,
+        "bounds": {
+            "top": 114,
+            "left": 1216,
+            "width": 190,
+            "height": 152
+        },
+        "tileFilter": {},
+        "filterConfig": {
+            "type": "MIXED",
+            "customName": "Avg ($)",
+            "defaultName": "Custom chart",
+            "chartConfig": {
+                "legendShown": true,
+                "type": "SINGLE_VALUE",
+                "series": [{
+                    "metric": "calc:apps.web.${app.name}.revenue",
+                    "aggregation": "AVG",
+                    "type": "LINE",
+                    "entityType": "APPLICATION",
+                    "dimensions": [],
+                    "sortAscending": false,
+                    "aggregationRate": "TOTAL",
+                    "sortColumn": true
+                }],
+                "resultMetadata": {}
+            },
+            "filtersPerEntityType": {}
+        }
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 0,
+            "left": 190,
+            "width": 190,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "## ✅ [SLO Dashboard](#dashboard;gtf=-24h%20to%20now;gf=all;id=a614db83-e092-4d29-8de9-bb2124c20f6e)"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 0,
+            "left": 874,
+            "width": 228,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "## \uD83D\uDCC8 [Page Performance](#dashboard/dashboard;id=9ac630db-7eba-49e7-b781-aa7a1d02dddf;gtf=-7d%20to%20now;gf=all)"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 0,
+            "left": 608,
+            "width": 266,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "## ☕  [Marketing Campaigns](#dashboard;id=e0c483a7-5ee0-4daf-91ba-ceaa519c2427;gtf=-24h%20to%20now;gf=all)"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 0,
+            "left": 1102,
+            "width": 190,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "## \uD83D\uDD1D [Top Report](#dashboard/dashboard;id=04560d5f-58a8-4688-a87a-9a3128f85c20;gtf=-24h%20to%20now;gf=all)"
+    }, {
+        "name": "Custom chart",
+        "tileType": "CUSTOM_CHARTING",
+        "configured": true,
+        "bounds": {
+            "top": 114,
+            "left": 836,
+            "width": 190,
+            "height": 152
+        },
+        "tileFilter": {},
+        "filterConfig": {
+            "type": "MIXED",
+            "customName": "Per Minute",
+            "defaultName": "Custom chart",
+            "chartConfig": {
+                "legendShown": true,
+                "type": "SINGLE_VALUE",
+                "series": [{
+                    "metric": "${bookingmetric.id}",
+                    "aggregation": "COUNT",
+                    "type": "LINE",
+                    "entityType": "APPLICATION",
+                    "dimensions": [{
+                        "id": "1",
+                        "name": "bookingmessage",
+                        "values": ["${bookingmessage.value}"],
+                        "entityDimension": false
+                    }],
+                    "sortAscending": false,
+                    "aggregationRate": "MINUTE",
+                    "sortColumn": true
+                }],
+                "resultMetadata": {}
+            },
+            "filtersPerEntityType": {}
+        }
+    }, {
+        "name": "Custom chart",
+        "tileType": "CUSTOM_CHARTING",
+        "configured": true,
+        "bounds": {
+            "top": 114,
+            "left": 1026,
+            "width": 190,
+            "height": 152
+        },
+        "tileFilter": {},
+        "filterConfig": {
+            "type": "MIXED",
+            "customName": "Per Hour",
+            "defaultName": "Custom chart",
+            "chartConfig": {
+                "legendShown": true,
+                "type": "SINGLE_VALUE",
+                "series": [{
+                    "metric": "${bookingmetric.id}",
+                    "aggregation": "COUNT",
+                    "type": "LINE",
+                    "entityType": "APPLICATION",
+                    "dimensions": [{
+                        "id": "1",
+                        "name": "bookingmessage",
+                        "values": ["${bookingmessage.value}"],
+                        "entityDimension": false
+                    }],
+                    "sortAscending": false,
+                    "aggregationRate": "HOUR",
+                    "sortColumn": true
+                }],
+                "resultMetadata": {}
+            },
+            "filtersPerEntityType": {}
+        }
+    }, {
+        "name": "User Sessions Query",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 532,
+            "left": 646,
+            "width": 570,
+            "height": 266
+        },
+        "tileFilter": {},
+        "customName": "Top 10 Bookings by City",
+        "query": "SELECT TOP (city, 10) as City, Count(*) as Count FROM usersession where useraction.application = \"${app.name}\" and ${bookingmessage.key} = \"Your journey was booked successfully! Open the summary and print out the ticket's.\" and city IS NOT NULL GROUP BY City ORDER BY Count(*) DESC",
+        "type": "COLUMN_CHART",
+        "visualizationConfig": {
+            "hasAxisBucketing": true
+        },
+        "limit": 50
+    }, {
+        "name": "User Sessions Query",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 798,
+            "left": 646,
+            "width": 570,
+            "height": 266
+        },
+        "tileFilter": {},
+        "customName": "Top 10 Travel Destinations",
+        "query": "SELECT TOP (${search.id}1, 10) as Destination, Count(*) as Count FROM usersession where useraction.application = \"${app.name}\" and ${bookingmessage.key} = \"Your journey was booked successfully! Open the summary and print out the ticket's.\"  and ${search.id}1 IS NOT NULL GROUP BY Destination ORDER BY Count(*) DESC",
+        "type": "COLUMN_CHART",
+        "visualizationConfig": {
+            "hasAxisBucketing": true
+        },
+        "limit": 50
+    }, {
+        "name": "User Sessions Query",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 532,
+            "left": 1216,
+            "width": 570,
+            "height": 266
+        },
+        "tileFilter": {},
+        "customName": "Top 10 Bookings by Country",
+        "query": "SELECT TOP (country, 10) as Country, Count(*) as Count FROM usersession where useraction.application = \"${app.name}\" and ${bookingmessage.key} = \"Your journey was booked successfully! Open the summary and print out the ticket's.\"  and country IS NOT NULL GROUP BY country ORDER BY Count(*) DESC",
+        "type": "COLUMN_CHART",
+        "visualizationConfig": {
+            "hasAxisBucketing": true
+        },
+        "limit": 50
+    }, {
+        "name": "User Sessions Query",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 798,
+            "left": 1216,
+            "width": 570,
+            "height": 266
+        },
+        "tileFilter": {},
+        "customName": "Bookings by Loyalty Status",
+        "query": "SELECT ${loyaltystatus.id} as \"Loyalty Status\", Count(*) as Count FROM usersession where useraction.application = \"${app.name}\" and ${bookingmessage.key} = \"Your journey was booked successfully! Open the summary and print out the ticket's.\"  and (${loyaltystatus.id} = \"Gold\" or ${loyaltystatus.id} = \"Silver\" or ${loyaltystatus.id} = \"Platinum\") GROUP BY ${loyaltystatus.id} ORDER BY Count(*) DESC",
+        "type": "COLUMN_CHART",
+        "visualizationConfig": {
+            "hasAxisBucketing": false
+        },
+        "limit": 50
+    }]
+}

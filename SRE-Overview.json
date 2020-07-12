@@ -1,0 +1,1045 @@
+{
+    "metadata": {
+        "configurationVersions": [3],
+        "clusterVersion": "1.192.87.20200501-000127"
+    },
+    "id": "27e6daaa-29e4-44b2-a3aa-148b80be3524",
+    "dashboardMetadata": {
+        "name": "${app.name} - SRE Dashboard",
+        "shared": false,
+        "owner": "lucas.hocker@dynatrace.com",
+        "sharingDetails": {
+            "linkShared": true,
+            "published": false
+        },
+        "dashboardFilter": {
+            "timeframe": "-24h to now"
+        }
+    },
+    "tiles": [{
+        "name": "Problems",
+        "tileType": "OPEN_PROBLEMS",
+        "configured": true,
+        "bounds": {
+            "top": 114,
+            "left": 0,
+            "width": 152,
+            "height": 152
+        },
+        "tileFilter": {
+            "managementZone": {
+                "id": "${mz.id}",
+                "name": "${mz.name}"
+            }
+        }
+    }, {
+        "name": "Custom chart",
+        "tileType": "CUSTOM_CHARTING",
+        "configured": true,
+        "bounds": {
+            "top": 114,
+            "left": 494,
+            "width": 152,
+            "height": 152
+        },
+        "tileFilter": {},
+        "filterConfig": {
+            "type": "MIXED",
+            "customName": "Availability",
+            "defaultName": "Custom chart",
+            "chartConfig": {
+                "legendShown": true,
+                "type": "SINGLE_VALUE",
+                "series": [{
+                    "metric": "builtin:synthetic.browser.availability.location.total",
+                    "aggregation": "AVG",
+                    "type": "LINE",
+                    "entityType": "SYNTHETIC_BROWSER_MONITOR",
+                    "dimensions": [{
+                        "id": "0",
+                        "name": "dt.entity.synthetic_test",
+                        "values": [],
+                        "entityDimension": true
+                    }],
+                    "sortAscending": false,
+                    "aggregationRate": "TOTAL",
+                    "sortColumn": true
+                }],
+                "resultMetadata": {}
+            },
+            "filtersPerEntityType": {
+                "SYNTHETIC_BROWSER_MONITOR": {
+                    "SPECIFIC_ENTITIES": ["${synth.id}"]
+                }
+            }
+        }
+    }, {
+        "name": "Custom chart",
+        "tileType": "CUSTOM_CHARTING",
+        "configured": true,
+        "bounds": {
+            "top": 304,
+            "left": 342,
+            "width": 722,
+            "height": 342
+        },
+        "tileFilter": {},
+        "filterConfig": {
+            "type": "MIXED",
+            "customName": "Transactions by User Satisfaction",
+            "defaultName": "Custom chart",
+            "chartConfig": {
+                "legendShown": true,
+                "type": "TIMESERIES",
+                "series": [{
+                    "metric": "builtin:apps.web.actionCount.category",
+                    "aggregation": "NONE",
+                    "type": "BAR",
+                    "entityType": "APPLICATION",
+                    "dimensions": [{
+                        "id": "1",
+                        "name": "Apdex category",
+                        "values": ["FRUSTRATED", "SATISFIED", "TOLERATING"],
+                        "entityDimension": false
+                    }],
+                    "sortAscending": false,
+                    "aggregationRate": "TOTAL",
+                    "sortColumn": true
+                }],
+                "resultMetadata": {
+                    "null¦Apdex category»TOLERATING»falsebuiltin:apps.web.actionCount.category|NONE|TOTAL|BAR|APPLICATION": {
+                        "lastModified": 1591421677237,
+                        "customColor": "#ffe11c"
+                    },
+                    "APPLICATION-FF84B13099B75A08¦APPLICATION»APPLICATION-FF84B13099B75A08»true¦Apdex category»TOLERATING»falsebuiltin:apps.web.actionCount.category|NONE|TOTAL|BAR|APPLICATION": {
+                        "lastModified": 1590210595670,
+                        "customColor": "#FFE11C"
+                    },
+                    "APPLICATION-FF84B13099B75A08¦APPLICATION»APPLICATION-FF84B13099B75A08»true¦Apdex category»SATISFIED»falsebuiltin:apps.web.actionCount.category|NONE|TOTAL|BAR|APPLICATION": {
+                        "lastModified": 1587780663757,
+                        "customColor": "#7cc33f"
+                    },
+                    "null¦Apdex category»SATISFIED»falsebuiltin:apps.web.actionCount.category|NONE|TOTAL|BAR|APPLICATION": {
+                        "lastModified": 1591421656519,
+                        "customColor": "#7cc33f"
+                    },
+                    "APPLICATION-FF84B13099B75A08¦APPLICATION»APPLICATION-FF84B13099B75A08»true¦Apdex category»FRUSTRATED»falsebuiltin:apps.web.actionCount.category|NONE|TOTAL|LINE|APPLICATION": {
+                        "lastModified": 1587780559989,
+                        "customColor": "#de192f"
+                    },
+                    "APPLICATION-FF84B13099B75A08¦APPLICATION»APPLICATION-FF84B13099B75A08»true¦Apdex category»SATISFIED»falsebuiltin:apps.web.actionCount.category|NONE|TOTAL|LINE|APPLICATION": {
+                        "lastModified": 1587780523898,
+                        "customColor": "#7cc33f"
+                    },
+                    "APPLICATION-FF84B13099B75A08¦APPLICATION»APPLICATION-FF84B13099B75A08»true¦Apdex category»TOLERATING»falsebuiltin:apps.web.actionCount.category|NONE|TOTAL|LINE|APPLICATION": {
+                        "lastModified": 1587780543663,
+                        "customColor": "#fff29a"
+                    },
+                    "null¦Apdex category»FRUSTRATED»falsebuiltin:apps.web.actionCount.category|NONE|TOTAL|BAR|APPLICATION": {
+                        "lastModified": 1591421691269,
+                        "customColor": "#de192f"
+                    },
+                    "APPLICATION-FF84B13099B75A08¦APPLICATION»APPLICATION-FF84B13099B75A08»true¦Apdex category»FRUSTRATED»falsebuiltin:apps.web.actionCount.category|NONE|TOTAL|BAR|APPLICATION": {
+                        "lastModified": 1587780634500,
+                        "customColor": "#de192f"
+                    }
+                }
+            },
+            "filtersPerEntityType": {
+                "APPLICATION": {
+                    "SPECIFIC_ENTITIES": ["${app.id}"]
+                }
+            }
+        }
+    }, {
+        "name": "Custom chart",
+        "tileType": "CUSTOM_CHARTING",
+        "configured": true,
+        "bounds": {
+            "top": 646,
+            "left": 342,
+            "width": 722,
+            "height": 304
+        },
+        "tileFilter": {},
+        "filterConfig": {
+            "type": "MIXED",
+            "customName": "Response Time",
+            "defaultName": "Custom chart",
+            "chartConfig": {
+                "legendShown": true,
+                "type": "TIMESERIES",
+                "series": [{
+                    "metric": "builtin:apps.web.visuallyComplete.load.browser",
+                    "aggregation": "AVG",
+                    "type": "AREA",
+                    "entityType": "APPLICATION",
+                    "dimensions": [],
+                    "sortAscending": false,
+                    "aggregationRate": "TOTAL",
+                    "sortColumn": false
+                }, {
+                    "metric": "builtin:apps.web.visuallyComplete.xhr.browser",
+                    "aggregation": "AVG",
+                    "type": "AREA",
+                    "entityType": "APPLICATION",
+                    "dimensions": [],
+                    "sortAscending": false,
+                    "aggregationRate": "TOTAL",
+                    "sortColumn": true
+                }],
+                "resultMetadata": {
+                    "nullbuiltin:apps.web.visuallyComplete.xhr.browser|PERCENTILE|TOTAL|50|AREA|APPLICATION": {
+                        "lastModified": 1591502466759,
+                        "customColor": "#7c38a1"
+                    },
+                    "APPLICATION-FF84B13099B75A08¦APPLICATION»APPLICATION-FF84B13099B75A08»truebuiltin:apps.web.visuallyComplete.load.browser|AVG|TOTAL|LINE|APPLICATION": {
+                        "lastModified": 1587781024968,
+                        "customColor": "#7c38a1"
+                    },
+                    "nullbuiltin:apps.web.visuallyComplete.xhr.browser|AVG|TOTAL|AREA|APPLICATION": {
+                        "lastModified": 1591502578549,
+                        "customColor": "#7c38a1"
+                    },
+                    "${app.id}¦APPLICATION»${app.id}»truebuiltin:apps.web.visuallyComplete.load.browser|PERCENTILE|TOTAL|50|AREA|APPLICATION": {
+                        "lastModified": 1591455022633,
+                        "customColor": "#008cdb"
+                    },
+                    "${app.id}¦APPLICATION»${app.id}»truebuiltin:apps.web.actionDuration.xhr.browser|PERCENTILE|TOTAL|50|AREA|APPLICATION": {
+                        "lastModified": 1591455025940,
+                        "customColor": "#7c38a1"
+                    },
+                    "APPLICATION-FF84B13099B75A08¦APPLICATION»APPLICATION-FF84B13099B75A08»truebuiltin:apps.web.visuallyComplete.load.browser|PERCENTILE|TOTAL|50|AREA|APPLICATION": {
+                        "lastModified": 1588005491550,
+                        "customColor": "#7c38a1"
+                    },
+                    "${app.id}¦APPLICATION»${app.id}»truebuiltin:apps.web.actionDuration.xhr.browser|AVG|TOTAL|AREA|APPLICATION": {
+                        "lastModified": 1591421745338,
+                        "customColor": "#7c38a1"
+                    },
+                    "nullbuiltin:apps.web.visuallyComplete.load.browser|AVG|TOTAL|AREA|APPLICATION": {
+                        "lastModified": 1591502573195,
+                        "customColor": "#008cdb"
+                    },
+                    "${app.id}¦APPLICATION»${app.id}»truebuiltin:apps.web.visuallyComplete.load.browser|AVG|TOTAL|AREA|APPLICATION": {
+                        "lastModified": 1591421741355,
+                        "customColor": "#008cdb"
+                    },
+                    "APPLICATION-FF84B13099B75A08¦APPLICATION»APPLICATION-FF84B13099B75A08»truebuiltin:apps.web.visuallyComplete.load.browser|AVG|TOTAL|AREA|APPLICATION": {
+                        "lastModified": 1587781038490,
+                        "customColor": "#7c38a1"
+                    },
+                    "nullbuiltin:apps.web.visuallyComplete.load.browser|PERCENTILE|TOTAL|50|AREA|APPLICATION": {
+                        "lastModified": 1591502464037,
+                        "customColor": "#008cdb"
+                    }
+                }
+            },
+            "filtersPerEntityType": {
+                "APPLICATION": {
+                    "SPECIFIC_ENTITIES": ["${app.id}"]
+                }
+            }
+        }
+    }, {
+        "name": "Custom chart",
+        "tileType": "CUSTOM_CHARTING",
+        "configured": true,
+        "bounds": {
+            "top": 646,
+            "left": 1064,
+            "width": 722,
+            "height": 304
+        },
+        "tileFilter": {},
+        "filterConfig": {
+            "type": "MIXED",
+            "customName": "Total Errors - HTTP (Red) vs JavaScript (Orange)",
+            "defaultName": "Custom chart",
+            "chartConfig": {
+                "legendShown": true,
+                "type": "TIMESERIES",
+                "series": [{
+                    "metric": "builtin:apps.web.countOfErrors",
+                    "aggregation": "NONE",
+                    "type": "BAR",
+                    "entityType": "APPLICATION",
+                    "dimensions": [{
+                        "id": "2",
+                        "name": "Error type",
+                        "values": ["HTTP", "JavaScript"],
+                        "entityDimension": false
+                    }],
+                    "sortAscending": false,
+                    "aggregationRate": "TOTAL",
+                    "sortColumn": true
+                }],
+                "resultMetadata": {
+                    "${app.id}¦APPLICATION»${app.id}»true¦Error type»HTTP»falsebuiltin:apps.web.countOfErrors|NONE|TOTAL|BAR|APPLICATION": {
+                        "lastModified": 1591422753009,
+                        "customColor": "#de192f"
+                    },
+                    "APPLICATION-FF84B13099B75A08¦APPLICATION»APPLICATION-FF84B13099B75A08»true¦Error type»JavaScript»falsebuiltin:apps.web.countOfErrors|NONE|TOTAL|BAR|APPLICATION": {
+                        "lastModified": 1587781384394,
+                        "customColor": "#fff29a"
+                    },
+                    "null¦Error type»HTTP»falsebuiltin:apps.web.countOfErrors|NONE|TOTAL|BAR|APPLICATION": {
+                        "lastModified": 1591636182952,
+                        "customColor": "#de192f"
+                    },
+                    "${app.id}¦APPLICATION»${app.id}»true¦Error type»HTTP»falsebuiltin:apps.web.countOfErrors|NONE|TOTAL|LINE|APPLICATION": {
+                        "lastModified": 1591422050325,
+                        "customColor": "#de192f"
+                    },
+                    "null¦Error type»JavaScript»falsebuiltin:apps.web.countOfErrors|NONE|TOTAL|BAR|APPLICATION": {
+                        "lastModified": 1591636245568,
+                        "customColor": "#ffa500"
+                    },
+                    "${app.id}¦APPLICATION»${app.id}»true¦Error type»JavaScript»falsebuiltin:apps.web.countOfErrors|NONE|TOTAL|BAR|APPLICATION": {
+                        "lastModified": 1591422759045,
+                        "customColor": "#ef651f"
+                    },
+                    "APPLICATION-FF84B13099B75A08¦APPLICATION»APPLICATION-FF84B13099B75A08»true¦Error type»HTTP»falsebuiltin:apps.web.countOfErrors|NONE|TOTAL|BAR|APPLICATION": {
+                        "lastModified": 1587781313178,
+                        "customColor": "#de192f"
+                    },
+                    "${app.id}¦APPLICATION»${app.id}»true¦Error type»JavaScript»falsebuiltin:apps.web.countOfErrors|NONE|TOTAL|LINE|APPLICATION": {
+                        "lastModified": 1591422061891,
+                        "customColor": "#fff29a"
+                    },
+                    "APPLICATION-FF84B13099B75A08¦APPLICATION»APPLICATION-FF84B13099B75A08»true¦Error type»HTTP»falsebuiltin:apps.web.countOfErrors|NONE|TOTAL|LINE|APPLICATION": {
+                        "lastModified": 1587781287800,
+                        "customColor": "#de192f"
+                    }
+                }
+            },
+            "filtersPerEntityType": {
+                "APPLICATION": {
+                    "SPECIFIC_ENTITIES": ["${app.id}"]
+                }
+            }
+        }
+    }, {
+        "name": "Custom chart",
+        "tileType": "CUSTOM_CHARTING",
+        "configured": true,
+        "bounds": {
+            "top": 114,
+            "left": 988,
+            "width": 152,
+            "height": 152
+        },
+        "tileFilter": {},
+        "filterConfig": {
+            "type": "MIXED",
+            "customName": "Page Load",
+            "defaultName": "Custom chart",
+            "chartConfig": {
+                "legendShown": true,
+                "type": "SINGLE_VALUE",
+                "series": [{
+                    "metric": "builtin:apps.web.visuallyComplete.load.browser",
+                    "aggregation": "AVG",
+                    "type": "AREA",
+                    "entityType": "APPLICATION",
+                    "dimensions": [{
+                        "id": "0",
+                        "name": "dt.entity.application",
+                        "values": [],
+                        "entityDimension": true
+                    }],
+                    "sortAscending": false,
+                    "aggregationRate": "TOTAL",
+                    "sortColumn": true
+                }],
+                "resultMetadata": {
+                    "APPLICATION-FF84B13099B75A08¦APPLICATION»APPLICATION-FF84B13099B75A08»truebuiltin:apps.web.visuallyComplete.load.browser|AVG|TOTAL|LINE|APPLICATION": {
+                        "lastModified": 1587781024968,
+                        "customColor": "#7c38a1"
+                    },
+                    "APPLICATION-FF84B13099B75A08¦APPLICATION»APPLICATION-FF84B13099B75A08»truebuiltin:apps.web.visuallyComplete.load.browser|AVG|TOTAL|AREA|APPLICATION": {
+                        "lastModified": 1587781038490,
+                        "customColor": "#7c38a1"
+                    }
+                }
+            },
+            "filtersPerEntityType": {
+                "APPLICATION": {
+                    "SPECIFIC_ENTITIES": ["${app.id}"]
+                }
+            }
+        }
+    }, {
+        "name": "Custom chart",
+        "tileType": "CUSTOM_CHARTING",
+        "configured": true,
+        "bounds": {
+            "top": 114,
+            "left": 1330,
+            "width": 152,
+            "height": 152
+        },
+        "tileFilter": {},
+        "filterConfig": {
+            "type": "MIXED",
+            "customName": "HTTP Errors",
+            "defaultName": "Custom chart",
+            "chartConfig": {
+                "legendShown": true,
+                "type": "SINGLE_VALUE",
+                "series": [{
+                    "metric": "builtin:apps.web.countOfErrors",
+                    "aggregation": "NONE",
+                    "type": "BAR",
+                    "entityType": "APPLICATION",
+                    "dimensions": [{
+                        "id": "0",
+                        "name": "dt.entity.application",
+                        "values": [],
+                        "entityDimension": true
+                    }, {
+                        "id": "2",
+                        "name": "Error type",
+                        "values": ["HTTP"],
+                        "entityDimension": false
+                    }],
+                    "sortAscending": false,
+                    "aggregationRate": "TOTAL",
+                    "sortColumn": true
+                }],
+                "resultMetadata": {
+                    "APPLICATION-FF84B13099B75A08¦APPLICATION»APPLICATION-FF84B13099B75A08»true¦Error type»JavaScript»falsebuiltin:apps.web.countOfErrors|NONE|TOTAL|BAR|APPLICATION": {
+                        "lastModified": 1587781384394,
+                        "customColor": "#fff29a"
+                    },
+                    "APPLICATION-FF84B13099B75A08¦APPLICATION»APPLICATION-FF84B13099B75A08»true¦Error type»HTTP»falsebuiltin:apps.web.countOfErrors|NONE|TOTAL|BAR|APPLICATION": {
+                        "lastModified": 1587781313178,
+                        "customColor": "#de192f"
+                    },
+                    "APPLICATION-FF84B13099B75A08¦APPLICATION»APPLICATION-FF84B13099B75A08»true¦Error type»HTTP»falsebuiltin:apps.web.countOfErrors|NONE|TOTAL|LINE|APPLICATION": {
+                        "lastModified": 1587781287800,
+                        "customColor": "#de192f"
+                    }
+                }
+            },
+            "filtersPerEntityType": {
+                "APPLICATION": {
+                    "SPECIFIC_ENTITIES": ["${app.id}"]
+                }
+            }
+        }
+    }, {
+        "name": "Custom chart",
+        "tileType": "CUSTOM_CHARTING",
+        "configured": true,
+        "bounds": {
+            "top": 114,
+            "left": 1482,
+            "width": 152,
+            "height": 152
+        },
+        "tileFilter": {},
+        "filterConfig": {
+            "type": "MIXED",
+            "customName": "JavaScript Errors",
+            "defaultName": "Custom chart",
+            "chartConfig": {
+                "legendShown": true,
+                "type": "SINGLE_VALUE",
+                "series": [{
+                    "metric": "builtin:apps.web.countOfErrors",
+                    "aggregation": "NONE",
+                    "type": "BAR",
+                    "entityType": "APPLICATION",
+                    "dimensions": [{
+                        "id": "0",
+                        "name": "dt.entity.application",
+                        "values": [],
+                        "entityDimension": true
+                    }, {
+                        "id": "2",
+                        "name": "Error type",
+                        "values": ["JavaScript"],
+                        "entityDimension": false
+                    }],
+                    "sortAscending": false,
+                    "aggregationRate": "TOTAL",
+                    "sortColumn": true
+                }],
+                "resultMetadata": {
+                    "APPLICATION-FF84B13099B75A08¦APPLICATION»APPLICATION-FF84B13099B75A08»true¦Error type»JavaScript»falsebuiltin:apps.web.countOfErrors|NONE|TOTAL|BAR|APPLICATION": {
+                        "lastModified": 1587781384394,
+                        "customColor": "#fff29a"
+                    },
+                    "APPLICATION-FF84B13099B75A08¦APPLICATION»APPLICATION-FF84B13099B75A08»true¦Error type»HTTP»falsebuiltin:apps.web.countOfErrors|NONE|TOTAL|BAR|APPLICATION": {
+                        "lastModified": 1587781313178,
+                        "customColor": "#de192f"
+                    },
+                    "APPLICATION-FF84B13099B75A08¦APPLICATION»APPLICATION-FF84B13099B75A08»true¦Error type»HTTP»falsebuiltin:apps.web.countOfErrors|NONE|TOTAL|LINE|APPLICATION": {
+                        "lastModified": 1587781287800,
+                        "customColor": "#de192f"
+                    }
+                }
+            },
+            "filtersPerEntityType": {
+                "APPLICATION": {
+                    "SPECIFIC_ENTITIES": ["${app.id}"]
+                }
+            }
+        }
+    }, {
+        "name": "Custom chart",
+        "tileType": "CUSTOM_CHARTING",
+        "configured": true,
+        "bounds": {
+            "top": 114,
+            "left": 1140,
+            "width": 152,
+            "height": 152
+        },
+        "tileFilter": {},
+        "filterConfig": {
+            "type": "MIXED",
+            "customName": "XHR",
+            "defaultName": "Custom chart",
+            "chartConfig": {
+                "legendShown": true,
+                "type": "SINGLE_VALUE",
+                "series": [{
+                    "metric": "builtin:apps.web.visuallyComplete.xhr.browser",
+                    "aggregation": "AVG",
+                    "type": "LINE",
+                    "entityType": "APPLICATION",
+                    "dimensions": [],
+                    "sortAscending": false,
+                    "aggregationRate": "TOTAL",
+                    "sortColumn": true
+                }],
+                "resultMetadata": {
+                    "APPLICATION-FF84B13099B75A08¦APPLICATION»APPLICATION-FF84B13099B75A08»truebuiltin:apps.web.visuallyComplete.load.browser|AVG|TOTAL|LINE|APPLICATION": {
+                        "lastModified": 1587781024968,
+                        "customColor": "#7c38a1"
+                    },
+                    "APPLICATION-FF84B13099B75A08¦APPLICATION»APPLICATION-FF84B13099B75A08»truebuiltin:apps.web.visuallyComplete.load.browser|AVG|TOTAL|AREA|APPLICATION": {
+                        "lastModified": 1587781038490,
+                        "customColor": "#7c38a1"
+                    }
+                }
+            },
+            "filtersPerEntityType": {
+                "APPLICATION": {
+                    "SPECIFIC_ENTITIES": ["${app.id}"]
+                }
+            }
+        }
+    }, {
+        "name": "Custom chart",
+        "tileType": "CUSTOM_CHARTING",
+        "configured": true,
+        "bounds": {
+            "top": 114,
+            "left": 798,
+            "width": 152,
+            "height": 152
+        },
+        "tileFilter": {},
+        "filterConfig": {
+            "type": "MIXED",
+            "customName": "Transactions",
+            "defaultName": "Custom chart",
+            "chartConfig": {
+                "legendShown": true,
+                "type": "SINGLE_VALUE",
+                "series": [{
+                    "metric": "builtin:apps.web.actionCount.category",
+                    "aggregation": "NONE",
+                    "type": "LINE",
+                    "entityType": "APPLICATION",
+                    "dimensions": [{
+                        "id": "0",
+                        "name": "dt.entity.application",
+                        "values": [],
+                        "entityDimension": true
+                    }],
+                    "sortAscending": false,
+                    "aggregationRate": "TOTAL",
+                    "sortColumn": true
+                }],
+                "resultMetadata": {
+                    "APPLICATION-FF84B13099B75A08¦APPLICATION»APPLICATION-FF84B13099B75A08»true¦Error type»JavaScript»falsebuiltin:apps.web.countOfErrors|NONE|TOTAL|BAR|APPLICATION": {
+                        "lastModified": 1587781384394,
+                        "customColor": "#fff29a"
+                    },
+                    "APPLICATION-FF84B13099B75A08¦APPLICATION»APPLICATION-FF84B13099B75A08»true¦Error type»HTTP»falsebuiltin:apps.web.countOfErrors|NONE|TOTAL|BAR|APPLICATION": {
+                        "lastModified": 1587781313178,
+                        "customColor": "#de192f"
+                    },
+                    "APPLICATION-FF84B13099B75A08¦APPLICATION»APPLICATION-FF84B13099B75A08»true¦Error type»HTTP»falsebuiltin:apps.web.countOfErrors|NONE|TOTAL|LINE|APPLICATION": {
+                        "lastModified": 1587781287800,
+                        "customColor": "#de192f"
+                    }
+                }
+            },
+            "filtersPerEntityType": {
+                "APPLICATION": {
+                    "SPECIFIC_ENTITIES": ["${app.id}"]
+                }
+            }
+        }
+    }, {
+        "name": "Custom chart",
+        "tileType": "CUSTOM_CHARTING",
+        "configured": true,
+        "bounds": {
+            "top": 114,
+            "left": 646,
+            "width": 152,
+            "height": 152
+        },
+        "tileFilter": {},
+        "filterConfig": {
+            "type": "MIXED",
+            "customName": "Users",
+            "defaultName": "Custom chart",
+            "chartConfig": {
+                "legendShown": true,
+                "type": "SINGLE_VALUE",
+                "series": [{
+                    "metric": "builtin:apps.web.activeUsersEst",
+                    "aggregation": "NONE",
+                    "type": "LINE",
+                    "entityType": "APPLICATION",
+                    "dimensions": [{
+                        "id": "0",
+                        "name": "dt.entity.application",
+                        "values": [],
+                        "entityDimension": true
+                    }],
+                    "sortAscending": false,
+                    "aggregationRate": "TOTAL",
+                    "sortColumn": true
+                }],
+                "resultMetadata": {
+                    "APPLICATION-FF84B13099B75A08¦APPLICATION»APPLICATION-FF84B13099B75A08»truebuiltin:apps.web.visuallyComplete.load.browser|AVG|TOTAL|LINE|APPLICATION": {
+                        "lastModified": 1587781024968,
+                        "customColor": "#7c38a1"
+                    },
+                    "APPLICATION-FF84B13099B75A08¦APPLICATION»APPLICATION-FF84B13099B75A08»truebuiltin:apps.web.activeUsersEst|NONE|TOTAL|LINE|APPLICATION": {
+                        "lastModified": 1587789374342,
+                        "customColor": "#008cdb"
+                    },
+                    "APPLICATION-FF84B13099B75A08¦APPLICATION»APPLICATION-FF84B13099B75A08»truebuiltin:apps.web.visuallyComplete.load.browser|AVG|TOTAL|AREA|APPLICATION": {
+                        "lastModified": 1587781038490,
+                        "customColor": "#7c38a1"
+                    }
+                }
+            },
+            "filtersPerEntityType": {
+                "APPLICATION": {
+                    "SPECIFIC_ENTITIES": ["${app.id}"]
+                }
+            }
+        }
+    }, {
+        "name": "${app.name}",
+        "tileType": "APPLICATION_WORLDMAP",
+        "configured": true,
+        "bounds": {
+            "top": 304,
+            "left": 0,
+            "width": 304,
+            "height": 342
+        },
+        "tileFilter": {},
+        "assignedEntities": ["${app.id}"],
+        "metric": "APDEX"
+    }, {
+        "name": "\uD83D\uDEA6Health",
+        "tileType": "HEADER",
+        "configured": true,
+        "bounds": {
+            "top": 76,
+            "left": 152,
+            "width": 190,
+            "height": 38
+        },
+        "tileFilter": {}
+    }, {
+        "name": " ➵  Availability and Usage",
+        "tileType": "HEADER",
+        "configured": true,
+        "bounds": {
+            "top": 76,
+            "left": 608,
+            "width": 304,
+            "height": 38
+        },
+        "tileFilter": {}
+    }, {
+        "name": " \uD83D\uDCC8  Response Time",
+        "tileType": "HEADER",
+        "configured": true,
+        "bounds": {
+            "top": 76,
+            "left": 1064,
+            "width": 228,
+            "height": 38
+        },
+        "tileFilter": {}
+    }, {
+        "name": "\uD83D\uDEA8 Errors",
+        "tileType": "HEADER",
+        "configured": true,
+        "bounds": {
+            "top": 76,
+            "left": 1482,
+            "width": 190,
+            "height": 38
+        },
+        "tileFilter": {}
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 38,
+            "left": 0,
+            "width": 1786,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "---"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 646,
+            "left": 0,
+            "width": 304,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": " ## \uD83D\uDEE0 Analysis Links"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 684,
+            "left": 0,
+            "width": 304,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "* [Users with Booking Errors](${url}/ui/user-sessions/query?sessionquery=SELECT%20userId%20as%20%22User%20Name%22,%20${bookingmessage.key}%20as%20%22Error%20Message%22,%20${revenue.id}%20as%20%22Booking%20Amount%22,%20${search.id}1%20as%20%22Trip%20Destination%22,%20${loyaltystatus.id}%20as%20%22Loyalty%20Status%22%20FROM%20usersession%20WHERE%20useraction.application%3D%27${app.name}%27%20AND%20${bookingmessage.key}%3D%27${error_msg}%27%20%20and%20hasSessionReplay%20%3D%20true&gtf=-24h%20to%20now&gf=all)"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 0,
+            "left": 0,
+            "width": 190,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "## \uD83D\uDEA6 SRE Dashboard"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 0,
+            "left": 190,
+            "width": 190,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "## ✅ [SLO Dashboard](#dashboard;gtf=-24h%20to%20now;gf=all;id=a614db83-e092-4d29-8de9-bb2124c20f6e)"
+    }, {
+        "name": "Custom chart",
+        "tileType": "CUSTOM_CHARTING",
+        "configured": true,
+        "bounds": {
+            "top": 114,
+            "left": 1634,
+            "width": 152,
+            "height": 152
+        },
+        "tileFilter": {},
+        "filterConfig": {
+            "type": "MIXED",
+            "customName": "Booking Errors",
+            "defaultName": "Custom chart",
+            "chartConfig": {
+                "legendShown": true,
+                "type": "SINGLE_VALUE",
+                "series": [{
+                    "metric": "${bookingmetric.id}",
+                    "aggregation": "COUNT",
+                    "type": "LINE",
+                    "entityType": "APPLICATION",
+                    "dimensions": [{
+                        "id": "1",
+                        "name": "bookingmessage",
+                        "values": ["${error_msg}"],
+                        "entityDimension": false
+                    }],
+                    "sortAscending": false,
+                    "aggregationRate": "TOTAL",
+                    "sortColumn": true
+                }],
+                "resultMetadata": {
+                    "APPLICATION_METHOD-4E25839130E89CE3¦APPLICATION_METHOD»APPLICATION_METHOD-4E25839130E89CE3»truebuiltin:apps.web.action.count.load.browser|NONE|TOTAL|LINE|APPLICATION_METHOD": {
+                        "lastModified": 1588279226768,
+                        "customColor": "#de192f"
+                    },
+                    "APPLICATION_METHOD-4E25839130E89CE3¦APPLICATION_METHOD»APPLICATION_METHOD-4E25839130E89CE3»truebuiltin:apps.web.action.count.load.browser|NONE|TOTAL|BAR|APPLICATION_METHOD": {
+                        "lastModified": 1588279238501,
+                        "customColor": "#de192f"
+                    }
+                }
+            },
+            "filtersPerEntityType": {}
+        }
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 0,
+            "left": 380,
+            "width": 228,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "## ➵  [Digital Dashboard](#dashboard/dashboard;id=e8c80408-b76e-4ef6-9c26-dcf0cceea704;gtf=l_24_HOURS;gf=all)"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 0,
+            "left": 874,
+            "width": 228,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "## \uD83D\uDCC8 [Page Performance](#dashboard/dashboard;id=9ac630db-7eba-49e7-b781-aa7a1d02dddf;gtf=-7d%20to%20now;gf=all)"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 0,
+            "left": 608,
+            "width": 266,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "## ☕  [Marketing Campaigns](#dashboard;id=e0c483a7-5ee0-4daf-91ba-ceaa519c2427;gtf=-24h%20to%20now;gf=all)"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 0,
+            "left": 1102,
+            "width": 190,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "## \uD83D\uDD1D [Top Report](#dashboard/dashboard;id=04560d5f-58a8-4688-a87a-9a3128f85c20;gtf=-24h%20to%20now;gf=all)"
+    }, {
+        "name": "",
+        "tileType": "CUSTOM_CHARTING",
+        "configured": true,
+        "bounds": {
+            "top": 304,
+            "left": 1064,
+            "width": 722,
+            "height": 342
+        },
+        "tileFilter": {},
+        "filterConfig": {
+            "type": "MIXED",
+            "customName": "Booking Status - Successful (Green) vs Failed (Red) ",
+            "defaultName": "Custom chart",
+            "chartConfig": {
+                "legendShown": true,
+                "type": "TIMESERIES",
+                "series": [{
+                    "metric": "${bookingmetric.id}",
+                    "aggregation": "COUNT",
+                    "type": "BAR",
+                    "entityType": "APPLICATION",
+                    "dimensions": [{
+                        "id": "1",
+                        "name": "bookingmessage",
+                        "values": [],
+                        "entityDimension": false
+                    }],
+                    "sortAscending": false,
+                    "aggregationRate": "TOTAL",
+                    "sortColumn": true
+                }],
+                "resultMetadata": {
+                    "null¦bookingmessage»Your journey was booked successfully! Open the summary and print out the ticket's.»false${bookingmetric.id}|COUNT|TOTAL|BAR|APPLICATION": {
+                        "lastModified": 1591623255608,
+                        "customColor": "#7cc33f"
+                    },
+                    "null¦bookingmessage»Your journey was booked successfully! Open the summary and print out the ticket's.»false${bookingmetric.id}|AVG|TOTAL|BAR|APPLICATION": {
+                        "lastModified": 1591623115058,
+                        "customColor": "#7cc33f"
+                    },
+                    "null¦bookingmessage»${error_msg}»false${bookingmetric.id}|COUNT|TOTAL|BAR|APPLICATION": {
+                        "lastModified": 1591625640160,
+                        "customColor": "#de192f"
+                    }
+                }
+            },
+            "filtersPerEntityType": {}
+        }
+    }, {
+        "name": "",
+        "tileType": "CUSTOM_CHARTING",
+        "configured": true,
+        "bounds": {
+            "top": 114,
+            "left": 304,
+            "width": 152,
+            "height": 152
+        },
+        "tileFilter": {},
+        "filterConfig": {
+            "type": "MIXED",
+            "customName": "Booking Status",
+            "defaultName": "Custom chart",
+            "chartConfig": {
+                "legendShown": true,
+                "type": "PIE",
+                "series": [{
+                    "metric": "${bookingmetric.id}",
+                    "aggregation": "COUNT",
+                    "type": "BAR",
+                    "entityType": "APPLICATION",
+                    "dimensions": [{
+                        "id": "1",
+                        "name": "bookingmessage",
+                        "values": [],
+                        "entityDimension": false
+                    }],
+                    "sortAscending": false,
+                    "aggregationRate": "TOTAL",
+                    "sortColumn": true
+                }],
+                "resultMetadata": {
+                    "null¦bookingmessage»Your journey was booked successfully! Open the summary and print out the ticket's.»false${bookingmetric.id}|COUNT|TOTAL|BAR|APPLICATION": {
+                        "lastModified": 1591623255608,
+                        "customColor": "#7cc33f"
+                    },
+                    "null¦bookingmessage»Your journey was booked successfully! Open the summary and print out the ticket's.»false${bookingmetric.id}|AVG|TOTAL|BAR|APPLICATION": {
+                        "lastModified": 1591623115058,
+                        "customColor": "#7cc33f"
+                    },
+                    "null¦bookingmessage»${error_msg}»false${bookingmetric.id}|COUNT|TOTAL|BAR|APPLICATION": {
+                        "lastModified": 1591625640160,
+                        "customColor": "#de192f"
+                    }
+                }
+            },
+            "filtersPerEntityType": {}
+        }
+    }, {
+        "name": "Custom chart",
+        "tileType": "CUSTOM_CHARTING",
+        "configured": true,
+        "bounds": {
+            "top": 114,
+            "left": 152,
+            "width": 152,
+            "height": 152
+        },
+        "tileFilter": {},
+        "filterConfig": {
+            "type": "MIXED",
+            "customName": "User Satisfaction",
+            "defaultName": "Custom chart",
+            "chartConfig": {
+                "legendShown": true,
+                "type": "PIE",
+                "series": [{
+                    "metric": "builtin:apps.web.actionCount.category",
+                    "aggregation": "NONE",
+                    "type": "BAR",
+                    "entityType": "APPLICATION",
+                    "dimensions": [{
+                        "id": "1",
+                        "name": "Apdex category",
+                        "values": ["FRUSTRATED", "SATISFIED", "TOLERATING"],
+                        "entityDimension": false
+                    }],
+                    "sortAscending": false,
+                    "aggregationRate": "TOTAL",
+                    "sortColumn": true
+                }],
+                "resultMetadata": {
+                    "null¦Apdex category»TOLERATING»falsebuiltin:apps.web.actionCount.category|NONE|TOTAL|BAR|APPLICATION": {
+                        "lastModified": 1591421677237,
+                        "customColor": "#ffe11c"
+                    },
+                    "APPLICATION-FF84B13099B75A08¦APPLICATION»APPLICATION-FF84B13099B75A08»true¦Apdex category»TOLERATING»falsebuiltin:apps.web.actionCount.category|NONE|TOTAL|BAR|APPLICATION": {
+                        "lastModified": 1590210595670,
+                        "customColor": "#FFE11C"
+                    },
+                    "APPLICATION-FF84B13099B75A08¦APPLICATION»APPLICATION-FF84B13099B75A08»true¦Apdex category»SATISFIED»falsebuiltin:apps.web.actionCount.category|NONE|TOTAL|BAR|APPLICATION": {
+                        "lastModified": 1587780663757,
+                        "customColor": "#7cc33f"
+                    },
+                    "null¦Apdex category»SATISFIED»falsebuiltin:apps.web.actionCount.category|NONE|TOTAL|BAR|APPLICATION": {
+                        "lastModified": 1591421656519,
+                        "customColor": "#7cc33f"
+                    },
+                    "APPLICATION-FF84B13099B75A08¦APPLICATION»APPLICATION-FF84B13099B75A08»true¦Apdex category»FRUSTRATED»falsebuiltin:apps.web.actionCount.category|NONE|TOTAL|LINE|APPLICATION": {
+                        "lastModified": 1587780559989,
+                        "customColor": "#de192f"
+                    },
+                    "APPLICATION-FF84B13099B75A08¦APPLICATION»APPLICATION-FF84B13099B75A08»true¦Apdex category»SATISFIED»falsebuiltin:apps.web.actionCount.category|NONE|TOTAL|LINE|APPLICATION": {
+                        "lastModified": 1587780523898,
+                        "customColor": "#7cc33f"
+                    },
+                    "APPLICATION-FF84B13099B75A08¦APPLICATION»APPLICATION-FF84B13099B75A08»true¦Apdex category»TOLERATING»falsebuiltin:apps.web.actionCount.category|NONE|TOTAL|LINE|APPLICATION": {
+                        "lastModified": 1587780543663,
+                        "customColor": "#fff29a"
+                    },
+                    "null¦Apdex category»FRUSTRATED»falsebuiltin:apps.web.actionCount.category|NONE|TOTAL|BAR|APPLICATION": {
+                        "lastModified": 1591421691269,
+                        "customColor": "#de192f"
+                    },
+                    "APPLICATION-FF84B13099B75A08¦APPLICATION»APPLICATION-FF84B13099B75A08»true¦Apdex category»FRUSTRATED»falsebuiltin:apps.web.actionCount.category|NONE|TOTAL|BAR|APPLICATION": {
+                        "lastModified": 1587780634500,
+                        "customColor": "#de192f"
+                    }
+                }
+            },
+            "filtersPerEntityType": {
+                "APPLICATION": {
+                    "SPECIFIC_ENTITIES": ["${app.id}"]
+                }
+            }
+        }
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 722,
+            "left": 0,
+            "width": 304,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "* [Users with Rage Clicks](${url}/ui/user-sessions/query?sessionquery=SELECT%20userId%20as%20%22User%20Name%22,%20numberOfRageClicks%20as%20%22Rage%20Click%20Count%22,%20${loyaltystatus.id}%20as%20%22Loyalty%20Status%22%20FROM%20usersession%20WHERE%20useraction.application%3D%27${app.name}%27%20AND%20%20hasSessionReplay%20%3D%20true%20and%20numberOfRageClicks%20%3E%200%20ORDER%20BY%20numberOfRageClicks%20DESC&gtf=-24h%20to%20now&gf=all&visualization=TABLE)"
+    }]
+}

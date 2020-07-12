@@ -1,0 +1,396 @@
+{
+    "metadata": {
+        "configurationVersions": [3],
+        "clusterVersion": "1.192.87.20200501-000127"
+    },
+    "id": "e0c483a7-5ee0-4daf-91ba-ceaa519c2427",
+    "dashboardMetadata": {
+        "name": "${app.name} - Marketing Campaigns",
+        "shared": false,
+        "owner": "lucas.hocker@dynatrace.com",
+        "sharingDetails": {
+            "linkShared": true,
+            "published": false
+        },
+        "dashboardFilter": {
+            "timeframe": "-24h to now"
+        }
+    },
+    "tiles": [{
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 38,
+            "left": 0,
+            "width": 1596,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "----"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 0,
+            "left": 0,
+            "width": 190,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "## \uD83D\uDEA6[SRE Dashboard](#dashboard;gtf=-24h%20to%20now;gf=all;id=27e6daaa-29e4-44b2-a3aa-148b80be3524) "
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 0,
+            "left": 380,
+            "width": 228,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "## ➵  [Digital Dashboard](#dashboard/dashboard;id=e8c80408-b76e-4ef6-9c26-dcf0cceea704;gtf=l_24_HOURS;gf=all)"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 0,
+            "left": 190,
+            "width": 190,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "## ✅ [SLO Dashboard](#dashboard;gtf=-24h%20to%20now;gf=all;id=a614db83-e092-4d29-8de9-bb2124c20f6e)"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 0,
+            "left": 874,
+            "width": 228,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "## \uD83D\uDCC8 [Page Performance](#dashboard/dashboard;id=9ac630db-7eba-49e7-b781-aa7a1d02dddf;gtf=-7d%20to%20now;gf=all)\n"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 0,
+            "left": 608,
+            "width": 266,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "## ☕  Marketing Campaigns\n"
+    }, {
+        "name": "${campaign.name}",
+        "tileType": "HEADER",
+        "configured": true,
+        "bounds": {
+            "top": 76,
+            "left": 304,
+            "width": 304,
+            "height": 38
+        },
+        "tileFilter": {}
+    }, {
+        "name": "${campaign2.name}",
+        "tileType": "HEADER",
+        "configured": true,
+        "bounds": {
+            "top": 76,
+            "left": 1140,
+            "width": 304,
+            "height": 38
+        },
+        "tileFilter": {}
+    }, {
+        "name": "User Sessions Query",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 266,
+            "left": 0,
+            "width": 760,
+            "height": 304
+        },
+        "tileFilter": {},
+        "customName": "Conversions",
+        "query": "SELECT FUNNEL((useraction.targetUrl like \"%${campaign.value}%\") AS \"${campaign.name}\", (useraction.name=\"${finish}\") AS \"${finish}\") FROM usersession where useraction.application=\"${app.name}\" ",
+        "type": "FUNNEL",
+        "limit": 50
+    }, {
+        "name": "User Sessions Query",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 266,
+            "left": 836,
+            "width": 760,
+            "height": 304
+        },
+        "tileFilter": {},
+        "customName": "Conversions",
+        "query": "SELECT FUNNEL((useraction.targetUrl like \"%${campaign2.value}%\") AS \"${campaign2.name}\", (useraction.name=\"${finish}\") AS \"${finish}\") FROM usersession where useraction.application=\"${app.name}\" ",
+        "type": "FUNNEL",
+        "limit": 50
+    }, {
+        "name": "User Sessions Query",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 570,
+            "left": 380,
+            "width": 380,
+            "height": 304
+        },
+        "tileFilter": {},
+        "customName": "${finish} Total by Continent",
+        "query": "SELECT continent as \"Continent\", SUM(${revenue.id}) as \"Total Booking $$$\" FROM usersession where (${campaign.key} = \"${campaign.value}\") and (useraction.name=\"${finish}\") and useraction.application=\"${app.name}\" GROUP BY continent ORDER BY sum(${revenue.id}) DESC",
+        "type": "TABLE",
+        "limit": 50
+    }, {
+        "name": "User Sessions Query",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 570,
+            "left": 1216,
+            "width": 380,
+            "height": 304
+        },
+        "tileFilter": {},
+        "customName": "${finish} Total by Continent",
+        "query": "SELECT continent as \"Continent\", SUM(${revenue.id}) as \"Total Booking $$$\" FROM usersession where (${campaign.key} = \"${campaign2.value}\") and (useraction.name=\"${finish}\") and useraction.application=\"${app.name}\" GROUP BY continent ORDER BY sum(${revenue.id}) DESC",
+        "type": "TABLE",
+        "limit": 50
+    }, {
+        "name": "User Sessions Query",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 114,
+            "left": 608,
+            "width": 152,
+            "height": 152
+        },
+        "tileFilter": {},
+        "customName": "Errors",
+        "query": "SELECT SUM(errorCount) as \"Total\" FROM useraction where (targetUrl like \"%${campaign.value}%\") and useraction.application=\"${app.name}\" ",
+        "type": "SINGLE_VALUE",
+        "limit": 50
+    }, {
+        "name": "User Sessions Query",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 114,
+            "left": 1444,
+            "width": 152,
+            "height": 152
+        },
+        "tileFilter": {},
+        "customName": "Errors",
+        "query": "SELECT SUM(errorCount) as \"Total\" FROM useraction where (targetUrl like \"%${campaign2.value}%\") and useraction.application=\"${app.name}\" ",
+        "type": "SINGLE_VALUE",
+        "limit": 50
+    }, {
+        "name": "User Sessions Query",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 114,
+            "left": 456,
+            "width": 152,
+            "height": 152
+        },
+        "tileFilter": {},
+        "customName": "Response Time",
+        "query": "SELECT AVG(useraction.visuallyCompleteTime) as \"Average\" FROM useraction where (targetUrl like \"%${campaign.value}%\") and useraction.application=\"${app.name}\" ",
+        "type": "SINGLE_VALUE",
+        "limit": 50
+    }, {
+        "name": "User Sessions Query",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 114,
+            "left": 152,
+            "width": 152,
+            "height": 152
+        },
+        "tileFilter": {},
+        "customName": "${finish} - Average",
+        "query": "SELECT AVG(${revenue.id}) as \"$$$\" FROM usersession where (${campaign.key} = \"${campaign.value}\") and (useraction.name=\"${finish}\") and useraction.application=\"${app.name}\" ",
+        "type": "SINGLE_VALUE",
+        "limit": 50
+    }, {
+        "name": "User Sessions Query",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 114,
+            "left": 304,
+            "width": 152,
+            "height": 152
+        },
+        "tileFilter": {},
+        "customName": "Transactions",
+        "query": "SELECT Count(*) as \"Total\" FROM useraction where (targetUrl like \"%${campaign.value}%\") and useraction.application=\"${app.name}\" ",
+        "type": "SINGLE_VALUE",
+        "limit": 50
+    }, {
+        "name": "User Sessions Query",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 114,
+            "left": 1140,
+            "width": 152,
+            "height": 152
+        },
+        "tileFilter": {},
+        "customName": "Transactions",
+        "query": "SELECT Count(*) as \"Total\" FROM useraction where (targetUrl like \"%${campaign2.value}%\") and useraction.application=\"${app.name}\" ",
+        "type": "SINGLE_VALUE",
+        "limit": 50
+    }, {
+        "name": "User Sessions Query",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 114,
+            "left": 1292,
+            "width": 152,
+            "height": 152
+        },
+        "tileFilter": {},
+        "customName": "Response Time",
+        "query": "SELECT AVG(useraction.visuallyCompleteTime) as \"Average\" FROM useraction where (targetUrl like \"%${campaign2.value}%\") and useraction.application=\"${app.name}\" ",
+        "type": "SINGLE_VALUE",
+        "limit": 50
+    }, {
+        "name": "User Sessions Query",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 570,
+            "left": 0,
+            "width": 380,
+            "height": 304
+        },
+        "tileFilter": {},
+        "customName": "${finish} Total by Source & Medium",
+        "query": "SELECT ${source.id} as \"Source\", ${medium.id} as \"Medium\",  SUM(${revenue.id}) as \"Total $$$\" FROM usersession where (${campaign.key} = \"${campaign.value}\") and (useraction.name=\"${finish}\") and useraction.application=\"${app.name}\" GROUP BY ${source.id}, ${medium.id} ORDER BY sum(${revenue.id}) DESC",
+        "type": "TABLE",
+        "limit": 50
+    }, {
+        "name": "User Sessions Query",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 570,
+            "left": 836,
+            "width": 380,
+            "height": 304
+        },
+        "tileFilter": {},
+        "customName": "${finish} Total by Source & Medium",
+        "query": "SELECT ${source.id} as \"Source\", ${medium.id} as \"Medium\",  SUM(${revenue.id}) as \"Total $$$\" FROM usersession where (${campaign.key} = \"${campaign2.value}\") and (useraction.name=\"${finish}\") and useraction.application=\"${app.name}\" GROUP BY ${source.id}, ${medium.id} ORDER BY sum(${revenue.id}) DESC",
+        "type": "TABLE",
+        "limit": 50
+    }, {
+        "name": "User Sessions Query",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 114,
+            "left": 0,
+            "width": 152,
+            "height": 152
+        },
+        "tileFilter": {},
+        "customName": "${finish} - Total",
+        "query": "SELECT SUM(${revenue.id}) as \"$$$\" FROM usersession where (${campaign.key} = \"${campaign.value}\") and (useraction.name=\"${finish}\") and useraction.application=\"${app.name}\" ",
+        "type": "SINGLE_VALUE",
+        "limit": 50
+    }, {
+        "name": "User Sessions Query",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 114,
+            "left": 836,
+            "width": 152,
+            "height": 152
+        },
+        "tileFilter": {},
+        "customName": "${finish} - Total",
+        "query": "SELECT SUM(${revenue.id}) as \"$$$\" FROM usersession where (${campaign.key} =\"${campaign2.value}\") and (useraction.name=\"${finish}\") and useraction.application=\"${app.name}\" ",
+        "type": "SINGLE_VALUE",
+        "limit": 50
+    }, {
+        "name": "User Sessions Query",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 114,
+            "left": 988,
+            "width": 152,
+            "height": 152
+        },
+        "tileFilter": {},
+        "customName": "${finish} - Average",
+        "query": "SELECT AVG(${revenue.id}) as \"$$$\" FROM usersession where (${campaign.key}=\"${campaign2.value}\") and (useraction.name=\"${finish}\") and useraction.application=\"${app.name}\" ",
+        "type": "SINGLE_VALUE",
+        "limit": 50
+    }, {
+        "name": "User Sessions Query",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 874,
+            "left": 0,
+            "width": 760,
+            "height": 456
+        },
+        "tileFilter": {},
+        "customName": "${finish} Total by Continent, Country, Region & City",
+        "query": "SELECT Continent, Country, Region, City, SUM(${revenue.id}) as \"Total Booking $$$\" FROM usersession where (${campaign.key} = \"${campaign.value}\") and (useraction.name=\"${finish}\") and useraction.application=\"${app.name}\" and city IS NOT NULL GROUP BY Continent, Country, Region, City ORDER BY sum(${revenue.id}) DESC Limit 10",
+        "type": "TABLE",
+        "limit": 50
+    }, {
+        "name": "User Sessions Query",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 874,
+            "left": 836,
+            "width": 760,
+            "height": 456
+        },
+        "tileFilter": {},
+        "customName": "${finish} Total by Continent, Country, Region & City",
+        "query": "SELECT Continent, Country, Region, City, SUM(${revenue.id}) as \"Total Booking $$$\" FROM usersession where (${campaign.key} = \"${campaign2.value}\") and (useraction.name=\"${finish}\") and useraction.application=\"${app.name}\" and city IS NOT NULL GROUP BY Continent, Country, Region, City ORDER BY sum(${revenue.id}) DESC Limit 10",
+        "type": "TABLE",
+        "limit": 50
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 0,
+            "left": 1102,
+            "width": 190,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "## \uD83D\uDD1D [Top Report](#dashboard/dashboard;id=04560d5f-58a8-4688-a87a-9a3128f85c20;gtf=-24h%20to%20now;gf=all)"
+    }]
+}

@@ -1,0 +1,1381 @@
+{
+    "metadata": {
+        "configurationVersions": [3],
+        "clusterVersion": "1.192.87.20200501-000127"
+    },
+    "id": "a614db83-e092-4d29-8de9-bb2124c20f6e",
+    "dashboardMetadata": {
+        "name": "${app.name} - SLO Dashboard",
+        "shared": false,
+        "owner": "lucas.hocker@dynatrace.com",
+        "sharingDetails": {
+            "linkShared": true,
+            "published": false
+        },
+        "dashboardFilter": {
+            "timeframe": "-24h to now"
+        }
+    },
+    "tiles": [{
+        "name": "Custom chart",
+        "tileType": "CUSTOM_CHARTING",
+        "configured": true,
+        "bounds": {
+            "top": 76,
+            "left": 798,
+            "width": 228,
+            "height": 152
+        },
+        "tileFilter": {},
+        "filterConfig": {
+            "type": "MIXED",
+            "customName": "Conversion rate",
+            "defaultName": "Custom chart",
+            "chartConfig": {
+                "legendShown": true,
+                "type": "SINGLE_VALUE",
+                "series": [{
+                    "metric": "builtin:apps.web.conversionRate",
+                    "aggregation": "NONE",
+                    "type": "LINE",
+                    "entityType": "APPLICATION",
+                    "dimensions": [{
+                        "id": "2",
+                        "name": "User type",
+                        "values": ["Real users"],
+                        "entityDimension": false
+                    }],
+                    "sortAscending": false,
+                    "aggregationRate": "TOTAL",
+                    "sortColumn": true
+                }],
+                "resultMetadata": {}
+            },
+            "filtersPerEntityType": {
+                "APPLICATION": {
+                    "SPECIFIC_ENTITIES": ["${app.id}"]
+                }
+            }
+        }
+    }, {
+        "name": "Custom chart",
+        "tileType": "CUSTOM_CHARTING",
+        "configured": true,
+        "bounds": {
+            "top": 76,
+            "left": 1064,
+            "width": 228,
+            "height": 152
+        },
+        "tileFilter": {},
+        "filterConfig": {
+            "type": "MIXED",
+            "customName": "Bounce rate",
+            "defaultName": "Custom chart",
+            "chartConfig": {
+                "legendShown": true,
+                "type": "SINGLE_VALUE",
+                "series": [{
+                    "metric": "builtin:apps.web.bouncedSessionRatio",
+                    "aggregation": "NONE",
+                    "type": "LINE",
+                    "entityType": "APPLICATION",
+                    "dimensions": [{
+                        "id": "2",
+                        "name": "User type",
+                        "values": ["Real users"],
+                        "entityDimension": false
+                    }],
+                    "sortAscending": false,
+                    "aggregationRate": "TOTAL",
+                    "sortColumn": true
+                }],
+                "resultMetadata": {}
+            },
+            "filtersPerEntityType": {
+                "APPLICATION": {
+                    "SPECIFIC_ENTITIES": ["${app.id}"]
+                }
+            }
+        }
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 342,
+            "left": 798,
+            "width": 228,
+            "height": 76
+        },
+        "tileFilter": {},
+        "markdown": "Percentage of users \"Booking Travel\""
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 342,
+            "left": 1064,
+            "width": 228,
+            "height": 76
+        },
+        "tileFilter": {},
+        "markdown": "Percentage of users abandoning \"Booking Checkout\" per day"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 342,
+            "left": 532,
+            "width": 228,
+            "height": 76
+        },
+        "tileFilter": {},
+        "markdown": "Number of \"Failed Bookings\" per hour"
+    }, {
+        "name": "Custom chart",
+        "tileType": "CUSTOM_CHARTING",
+        "configured": true,
+        "bounds": {
+            "top": 418,
+            "left": 266,
+            "width": 228,
+            "height": 152
+        },
+        "tileFilter": {},
+        "filterConfig": {
+            "type": "MIXED",
+            "customName": "${method-3.name}",
+            "defaultName": "Custom chart",
+            "chartConfig": {
+                "legendShown": true,
+                "type": "SINGLE_VALUE",
+                "series": [{
+                    "metric": "builtin:apps.web.action.visuallyComplete.${method-3.type}.browser",
+                    "aggregation": "PERCENTILE",
+                    "percentile": 50,
+                    "type": "LINE",
+                    "entityType": "APPLICATION_METHOD",
+                    "dimensions": [],
+                    "sortAscending": false,
+                    "aggregationRate": "TOTAL",
+                    "sortColumn": true
+                }],
+                "resultMetadata": {}
+            },
+            "filtersPerEntityType": {
+                "APPLICATION_METHOD": {
+                    "SPECIFIC_ENTITIES": ["${method-3.id}"]
+                }
+            }
+        }
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 684,
+            "left": 0,
+            "width": 228,
+            "height": 76
+        },
+        "tileFilter": {},
+        "markdown": "Median time taken for a user to load the \"${method-5.name}\" page"
+    }, {
+        "name": "Custom chart",
+        "tileType": "CUSTOM_CHARTING",
+        "configured": true,
+        "bounds": {
+            "top": 418,
+            "left": 1064,
+            "width": 228,
+            "height": 152
+        },
+        "tileFilter": {},
+        "filterConfig": {
+            "type": "MIXED",
+            "customName": "${method-6.name}",
+            "defaultName": "Custom chart",
+            "chartConfig": {
+                "legendShown": true,
+                "type": "SINGLE_VALUE",
+                "series": [{
+                    "metric": "builtin:apps.web.action.visuallyComplete.${method-6.type}.browser",
+                    "aggregation": "PERCENTILE",
+                    "percentile": 50,
+                    "type": "LINE",
+                    "entityType": "APPLICATION_METHOD",
+                    "dimensions": [],
+                    "sortAscending": false,
+                    "aggregationRate": "TOTAL",
+                    "sortColumn": true
+                }],
+                "resultMetadata": {}
+            },
+            "filtersPerEntityType": {
+                "APPLICATION_METHOD": {
+                    "SPECIFIC_ENTITIES": ["${method-6.id}"]
+                }
+            }
+        }
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 38,
+            "left": 0,
+            "width": 1558,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "----"
+    }, {
+        "name": "Custom chart",
+        "tileType": "CUSTOM_CHARTING",
+        "configured": true,
+        "bounds": {
+            "top": 76,
+            "left": 532,
+            "width": 228,
+            "height": 152
+        },
+        "tileFilter": {},
+        "filterConfig": {
+            "type": "MIXED",
+            "customName": "Booking - Failed",
+            "defaultName": "Custom chart",
+            "chartConfig": {
+                "legendShown": true,
+                "type": "SINGLE_VALUE",
+                "series": [{
+                    "metric": "${bookingmetric.id}",
+                    "aggregation": "COUNT",
+                    "type": "LINE",
+                    "entityType": "APPLICATION",
+                    "dimensions": [{
+                        "id": "1",
+                        "name": "bookingmessage",
+                        "values": ["${error_msg}"],
+                        "entityDimension": false
+                    }],
+                    "sortAscending": false,
+                    "aggregationRate": "HOUR",
+                    "sortColumn": true
+                }],
+                "resultMetadata": {}
+            },
+            "filtersPerEntityType": {}
+        }
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 684,
+            "left": 266,
+            "width": 228,
+            "height": 76
+        },
+        "tileFilter": {},
+        "markdown": "Median time taken for a user to \"${method-3.name}\""
+    }, {
+        "name": "Custom chart",
+        "tileType": "CUSTOM_CHARTING",
+        "configured": true,
+        "bounds": {
+            "top": 76,
+            "left": 266,
+            "width": 228,
+            "height": 152
+        },
+        "tileFilter": {},
+        "filterConfig": {
+            "type": "MIXED",
+            "customName": "${bookingmetric.name} - Success",
+            "defaultName": "Custom chart",
+            "chartConfig": {
+                "legendShown": true,
+                "type": "SINGLE_VALUE",
+                "series": [{
+                    "metric": "${bookingmetric.id}",
+                    "aggregation": "COUNT",
+                    "type": "LINE",
+                    "entityType": "APPLICATION",
+                    "dimensions": [{
+                        "id": "1",
+                        "name": "bookingmessage",
+                        "values": ["${bookingmessage.value}"],
+                        "entityDimension": false
+                    }],
+                    "sortAscending": false,
+                    "aggregationRate": "HOUR",
+                    "sortColumn": true
+                }],
+                "resultMetadata": {}
+            },
+            "filtersPerEntityType": {}
+        }
+    }, {
+        "name": "Custom chart",
+        "tileType": "CUSTOM_CHARTING",
+        "configured": true,
+        "bounds": {
+            "top": 76,
+            "left": 1330,
+            "width": 228,
+            "height": 152
+        },
+        "tileFilter": {},
+        "filterConfig": {
+            "type": "MIXED",
+            "customName": "${method-1.name}",
+            "defaultName": "Custom chart",
+            "chartConfig": {
+                "legendShown": true,
+                "type": "SINGLE_VALUE",
+                "series": [{
+                    "metric": "builtin:apps.web.action.visuallyComplete.${method-1.type}.browser",
+                    "aggregation": "PERCENTILE",
+                    "percentile": 50,
+                    "type": "LINE",
+                    "entityType": "APPLICATION_METHOD",
+                    "dimensions": [],
+                    "sortAscending": false,
+                    "aggregationRate": "TOTAL",
+                    "sortColumn": true
+                }],
+                "resultMetadata": {}
+            },
+            "filtersPerEntityType": {
+                "APPLICATION_METHOD": {
+                    "SPECIFIC_ENTITIES": ["${method-1.id}"]
+                }
+            }
+        }
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 342,
+            "left": 266,
+            "width": 228,
+            "height": 76
+        },
+        "tileFilter": {},
+        "markdown": "Number of \"Successful Bookings\" per hour"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 342,
+            "left": 0,
+            "width": 228,
+            "height": 76
+        },
+        "tileFilter": {},
+        "markdown": "Revenue earned by hour"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 342,
+            "left": 1330,
+            "width": 228,
+            "height": 76
+        },
+        "tileFilter": {},
+        "markdown": "Median time taken for a user to load the \"${method-1.name}\" page"
+    }, {
+        "name": "Custom chart",
+        "tileType": "CUSTOM_CHARTING",
+        "configured": true,
+        "bounds": {
+            "top": 418,
+            "left": 532,
+            "width": 228,
+            "height": 152
+        },
+        "tileFilter": {},
+        "filterConfig": {
+            "type": "MIXED",
+            "customName": "${method-4.name}",
+            "defaultName": "Custom chart",
+            "chartConfig": {
+                "legendShown": true,
+                "type": "SINGLE_VALUE",
+                "series": [{
+                    "metric": "builtin:apps.web.action.visuallyComplete.${method-4.type}.browser",
+                    "aggregation": "PERCENTILE",
+                    "percentile": 50,
+                    "type": "LINE",
+                    "entityType": "APPLICATION_METHOD",
+                    "dimensions": [],
+                    "sortAscending": false,
+                    "aggregationRate": "TOTAL",
+                    "sortColumn": true
+                }],
+                "resultMetadata": {}
+            },
+            "filtersPerEntityType": {
+                "APPLICATION_METHOD": {
+                    "SPECIFIC_ENTITIES": ["${method-4.id}"]
+                }
+            }
+        }
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 684,
+            "left": 532,
+            "width": 228,
+            "height": 76
+        },
+        "tileFilter": {},
+        "markdown": "Median time taken for a user to  \"${method-4.name}\""
+    }, {
+        "name": "Custom chart",
+        "tileType": "CUSTOM_CHARTING",
+        "configured": true,
+        "bounds": {
+            "top": 418,
+            "left": 798,
+            "width": 228,
+            "height": 152
+        },
+        "tileFilter": {},
+        "filterConfig": {
+            "type": "MIXED",
+            "customName": "${method-8.name}",
+            "defaultName": "Custom chart",
+            "chartConfig": {
+                "legendShown": true,
+                "type": "SINGLE_VALUE",
+                "series": [{
+                    "metric": "builtin:apps.web.action.visuallyComplete.${method-8.type}.browser",
+                    "aggregation": "PERCENTILE",
+                    "percentile": 50,
+                    "type": "LINE",
+                    "entityType": "APPLICATION_METHOD",
+                    "dimensions": [],
+                    "sortAscending": false,
+                    "aggregationRate": "TOTAL",
+                    "sortColumn": true
+                }],
+                "resultMetadata": {}
+            },
+            "filtersPerEntityType": {
+                "APPLICATION_METHOD": {
+                    "SPECIFIC_ENTITIES": ["${method-8.id}"]
+                }
+            }
+        }
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 684,
+            "left": 798,
+            "width": 228,
+            "height": 76
+        },
+        "tileFilter": {},
+        "markdown": "Median time taken for a user to \"Add a Trip\""
+    }, {
+        "name": "Custom chart",
+        "tileType": "CUSTOM_CHARTING",
+        "configured": true,
+        "bounds": {
+            "top": 418,
+            "left": 1330,
+            "width": 228,
+            "height": 152
+        },
+        "tileFilter": {},
+        "filterConfig": {
+            "type": "MIXED",
+            "customName": "${method-7.name}",
+            "defaultName": "Custom chart",
+            "chartConfig": {
+                "legendShown": true,
+                "type": "SINGLE_VALUE",
+                "series": [{
+                    "metric": "builtin:apps.web.action.visuallyComplete.${method-7.type}.browser",
+                    "aggregation": "PERCENTILE",
+                    "percentile": 50,
+                    "type": "LINE",
+                    "entityType": "APPLICATION_METHOD",
+                    "dimensions": [],
+                    "sortAscending": false,
+                    "aggregationRate": "TOTAL",
+                    "sortColumn": true
+                }],
+                "resultMetadata": {}
+            },
+            "filtersPerEntityType": {
+                "APPLICATION_METHOD": {
+                    "SPECIFIC_ENTITIES": ["${method-7.id}"]
+                }
+            }
+        }
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 684,
+            "left": 1064,
+            "width": 228,
+            "height": 76
+        },
+        "tileFilter": {},
+        "markdown": "Median time taken for a user to \"${method-6.name}\""
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 684,
+            "left": 1330,
+            "width": 228,
+            "height": 76
+        },
+        "tileFilter": {},
+        "markdown": "Median time taken for a user to \"${method-9.name}\""
+    }, {
+        "name": "Custom chart",
+        "tileType": "CUSTOM_CHARTING",
+        "configured": true,
+        "bounds": {
+            "top": 418,
+            "left": 0,
+            "width": 228,
+            "height": 152
+        },
+        "tileFilter": {},
+        "filterConfig": {
+            "type": "MIXED",
+            "customName": "${method-5.name}",
+            "defaultName": "Custom chart",
+            "chartConfig": {
+                "legendShown": true,
+                "type": "SINGLE_VALUE",
+                "series": [{
+                    "metric": "builtin:apps.web.action.visuallyComplete.${method-5.type}.browser",
+                    "aggregation": "PERCENTILE",
+                    "percentile": 50,
+                    "type": "LINE",
+                    "entityType": "APPLICATION_METHOD",
+                    "dimensions": [],
+                    "sortAscending": false,
+                    "aggregationRate": "TOTAL",
+                    "sortColumn": true
+                }],
+                "resultMetadata": {}
+            },
+            "filtersPerEntityType": {
+                "APPLICATION_METHOD": {
+                    "SPECIFIC_ENTITIES": ["${method-5.id}"]
+                }
+            }
+        }
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 608,
+            "left": 798,
+            "width": 228,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "**⚠️ > 10 to 30 Seconds**"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 646,
+            "left": 798,
+            "width": 228,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "**❌ > 30 Seconds**"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 570,
+            "left": 798,
+            "width": 228,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "**✅   < 10 Seconds**"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 570,
+            "left": 1064,
+            "width": 228,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "**✅   < 10 Seconds**"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 570,
+            "left": 1330,
+            "width": 228,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "**✅   < 2 Seconds**"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 608,
+            "left": 1064,
+            "width": 228,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "**⚠️ > 10 to 30 Seconds**"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 608,
+            "left": 1330,
+            "width": 228,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "**⚠️ > 2 to 5 Seconds**"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 646,
+            "left": 1064,
+            "width": 228,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "**❌ > 30 Seconds**"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 646,
+            "left": 1330,
+            "width": 228,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "**❌ > 5 Seconds**"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 570,
+            "left": 532,
+            "width": 228,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "**✅   < 1 Second**"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 570,
+            "left": 266,
+            "width": 228,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "**✅   < 1 Seconds**"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 608,
+            "left": 532,
+            "width": 228,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "**⚠️ > 1 to 3 Seconds**"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 646,
+            "left": 532,
+            "width": 228,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "**❌ > 3 Seconds**"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 608,
+            "left": 266,
+            "width": 228,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "**⚠️ > 1 to 3 Seconds**"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 646,
+            "left": 266,
+            "width": 228,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "**❌ > 3 Seconds**"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 570,
+            "left": 0,
+            "width": 228,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "**✅   < 2 Seconds**"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 608,
+            "left": 0,
+            "width": 228,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "**⚠️ > 2 to 4 Seconds**"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 646,
+            "left": 0,
+            "width": 228,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "**❌ > 4 Seconds**"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 228,
+            "left": 532,
+            "width": 228,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "**✅   < 5**"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 266,
+            "left": 532,
+            "width": 228,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "**⚠️ > 5 to 20**"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 304,
+            "left": 532,
+            "width": 228,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "**❌ > 20**"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 228,
+            "left": 1330,
+            "width": 228,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "**✅   < 3 Seconds**"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 266,
+            "left": 1330,
+            "width": 228,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "**⚠️ > 3 to 5 Seconds**"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 304,
+            "left": 1330,
+            "width": 228,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "**❌ > 5 Seconds**"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 228,
+            "left": 1064,
+            "width": 228,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "**✅   < 20%**"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 266,
+            "left": 1064,
+            "width": 228,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "**⚠️ > 30% to 50%**"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 304,
+            "left": 1064,
+            "width": 228,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "**❌ > 50%**"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 228,
+            "left": 798,
+            "width": 228,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "**✅   > 45%**"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 266,
+            "left": 798,
+            "width": 228,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "**⚠️ > 30% to 45%**"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 304,
+            "left": 798,
+            "width": 228,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "**❌ < 30% %**"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 228,
+            "left": 0,
+            "width": 228,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "**✅   > $500k per hour**"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 266,
+            "left": 0,
+            "width": 228,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "**⚠️ > $300K to $500K per hour**"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 304,
+            "left": 0,
+            "width": 228,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "**❌ < $300K per hour**"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 228,
+            "left": 266,
+            "width": 228,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "**✅   > 70 per hour**"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 266,
+            "left": 266,
+            "width": 228,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "**⚠️  > 50 to 70 per hour**"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 304,
+            "left": 266,
+            "width": 228,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "**❌ < 50 per hour**"
+    }, {
+        "name": "Custom chart",
+        "tileType": "CUSTOM_CHARTING",
+        "configured": true,
+        "bounds": {
+            "top": 76,
+            "left": 0,
+            "width": 228,
+            "height": 152
+        },
+        "tileFilter": {},
+        "filterConfig": {
+            "type": "MIXED",
+            "customName": "${revenuemetric.name}",
+            "defaultName": "Custom chart",
+            "chartConfig": {
+                "legendShown": true,
+                "type": "SINGLE_VALUE",
+                "series": [{
+                    "metric": "${revenuemetric.id}",
+                    "aggregation": "SUM",
+                    "type": "LINE",
+                    "entityType": "APPLICATION",
+                    "dimensions": [],
+                    "sortAscending": false,
+                    "aggregationRate": "HOUR",
+                    "sortColumn": true
+                }],
+                "resultMetadata": {}
+            },
+            "filtersPerEntityType": {}
+        }
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 0,
+            "left": 0,
+            "width": 190,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "## \uD83D\uDEA6[SRE Dashboard](#dashboard;gtf=-24h%20to%20now;gf=all;id=27e6daaa-29e4-44b2-a3aa-148b80be3524) "
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 0,
+            "left": 380,
+            "width": 228,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "## ➵  [Digital Dashboard](#dashboard/dashboard;id=e8c80408-b76e-4ef6-9c26-dcf0cceea704;gtf=l_24_HOURS;gf=all)"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 0,
+            "left": 190,
+            "width": 190,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "## ✅ SLO Dashboard"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 0,
+            "left": 874,
+            "width": 228,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "## \uD83D\uDCC8 [Page Performance](#dashboard/dashboard;id=9ac630db-7eba-49e7-b781-aa7a1d02dddf;gtf=-7d%20to%20now;gf=all)"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 0,
+            "left": 608,
+            "width": 266,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "## ☕  [Marketing Campaigns](#dashboard;id=e0c483a7-5ee0-4daf-91ba-ceaa519c2427;gtf=-24h%20to%20now;gf=all)"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 0,
+            "left": 1102,
+            "width": 190,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "## \uD83D\uDD1D [Top Report](#dashboard/dashboard;id=04560d5f-58a8-4688-a87a-9a3128f85c20;gtf=-24h%20to%20now;gf=all)"
+    }, {
+        "name": "Custom chart",
+        "tileType": "CUSTOM_CHARTING",
+        "configured": true,
+        "bounds": {
+            "top": 760,
+            "left": 532,
+            "width": 228,
+            "height": 152
+        },
+        "tileFilter": {},
+        "filterConfig": {
+            "type": "MIXED",
+            "customName": "${dbservice.name} - Response Time",
+            "defaultName": "Custom chart",
+            "chartConfig": {
+                "legendShown": true,
+                "type": "SINGLE_VALUE",
+                "series": [{
+                    "metric": "builtin:service.response.time",
+                    "aggregation": "PERCENTILE",
+                    "percentile": 50,
+                    "type": "LINE",
+                    "entityType": "SERVICE",
+                    "dimensions": [],
+                    "sortAscending": false,
+                    "aggregationRate": "TOTAL",
+                    "sortColumn": true
+                }],
+                "resultMetadata": {}
+            },
+            "filtersPerEntityType": {
+                "SERVICE": {
+                    "SPECIFIC_ENTITIES": ["${dbservice.id}"]
+                }
+            }
+        }
+    }, {
+        "name": "Custom chart",
+        "tileType": "CUSTOM_CHARTING",
+        "configured": true,
+        "bounds": {
+            "top": 760,
+            "left": 0,
+            "width": 228,
+            "height": 152
+        },
+        "tileFilter": {},
+        "filterConfig": {
+            "type": "MIXED",
+            "customName": "${webservice.name} - Response Time",
+            "defaultName": "Custom chart",
+            "chartConfig": {
+                "legendShown": true,
+                "type": "SINGLE_VALUE",
+                "series": [{
+                    "metric": "builtin:service.response.time",
+                    "aggregation": "PERCENTILE",
+                    "percentile": 50,
+                    "type": "LINE",
+                    "entityType": "SERVICE",
+                    "dimensions": [],
+                    "sortAscending": false,
+                    "aggregationRate": "TOTAL",
+                    "sortColumn": true
+                }],
+                "resultMetadata": {}
+            },
+            "filtersPerEntityType": {
+                "SERVICE": {
+                    "SPECIFIC_ENTITIES": ["${webservice.id}"]
+                }
+            }
+        }
+    }, {
+        "name": "Custom chart",
+        "tileType": "CUSTOM_CHARTING",
+        "configured": true,
+        "bounds": {
+            "top": 760,
+            "left": 266,
+            "width": 228,
+            "height": 152
+        },
+        "tileFilter": {},
+        "filterConfig": {
+            "type": "MIXED",
+            "customName": "${webservice.name} - Throughput",
+            "defaultName": "Custom chart",
+            "chartConfig": {
+                "legendShown": true,
+                "type": "SINGLE_VALUE",
+                "series": [{
+                    "metric": "builtin:service.response.time",
+                    "aggregation": "COUNT",
+                    "type": "LINE",
+                    "entityType": "SERVICE",
+                    "dimensions": [],
+                    "sortAscending": false,
+                    "aggregationRate": "MINUTE",
+                    "sortColumn": true
+                }],
+                "resultMetadata": {}
+            },
+            "filtersPerEntityType": {
+                "SERVICE": {
+                    "SPECIFIC_ENTITIES": ["${webservice.id}"]
+                }
+            }
+        }
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 912,
+            "left": 0,
+            "width": 228,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "**✅   < 100 ms**"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 912,
+            "left": 266,
+            "width": 228,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "**✅   > 80 Requests/min**"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 912,
+            "left": 532,
+            "width": 228,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "**✅   < 2 ms**"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 950,
+            "left": 0,
+            "width": 228,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "**⚠️ > 100ms to 500 ms**"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 950,
+            "left": 266,
+            "width": 228,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "**⚠️ < 80 to 30 Requests/min**"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 950,
+            "left": 532,
+            "width": 228,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "**⚠️ > 2 to 10 ms**"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 988,
+            "left": 0,
+            "width": 228,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "**❌ > 500 ms**"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 988,
+            "left": 266,
+            "width": 228,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "**❌ < 30 Requests/min**"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 988,
+            "left": 532,
+            "width": 228,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "**❌ > 10 ms**"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 1026,
+            "left": 0,
+            "width": 228,
+            "height": 76
+        },
+        "tileFilter": {},
+        "markdown": "Median time taken to process webservice service calls"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 1026,
+            "left": 266,
+            "width": 228,
+            "height": 76
+        },
+        "tileFilter": {},
+        "markdown": "Number of requests to web service per minute"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 1026,
+            "left": 532,
+            "width": 228,
+            "height": 76
+        },
+        "tileFilter": {},
+        "markdown": "Median time taken to process a db request"
+    }]
+}
