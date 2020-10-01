@@ -1,0 +1,59 @@
+{
+    "metadata": {
+        "configurationVersions": [3],
+        "clusterVersion": "1.200.99.20200828-133130"
+    },
+    "id": "b1edf80d-97c2-47b3-9425-cbac6a520317",
+    "dashboardMetadata": {
+        "name": "Ang ET Sankey",
+        "shared": true,
+        "owner": "lucas.hocker@dynatrace.com",
+        "sharingDetails": {
+            "linkShared": true,
+            "published": false
+        },
+        "dashboardFilter": {
+            "timeframe": ""
+        }
+    },
+    "tiles": [{
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 0,
+            "left": 0,
+            "width": 1406,
+            "height": 760
+        },
+        "tileFilter": {},
+        "markdown": "[Extension Required](https://github.com/LucasHocker/DynatraceDashboardPowerups)\n\n!PU(link):sankey1"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 0,
+            "left": 1406,
+            "width": 152,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "## [\uD83D\uDD19](#dashboard;gtf=l_2_HOURS;gf=all;id=d29d4134-2d31-473f-bf2b-c7c207637146)"
+    }, {
+        "name": "User Sessions Query",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 38,
+            "left": 1406,
+            "width": 304,
+            "height": 1938
+        },
+        "tileFilter": {},
+        "customName": "Angular ET UserJourneys !PU(sankey):link=sankey1;kpi=revenue;kpicurr=EUR",
+        "query": "select useraction.name, useraction.matchingConversionGoals, useraction.apdexCategory, useraction.isEntryAction, useraction.isExitAction, useraction.stringProperties, useraction.doubleProperties, useraction.longProperties, useraction.dateProperties, useraction.duration, useraction.errorCount, userExperienceScore FROM usersession WHERE useraction.application=\"www.angular.easytravel.com\" ",
+        "type": "TABLE",
+        "limit": 50
+    }]
+}

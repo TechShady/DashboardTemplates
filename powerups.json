@@ -1,0 +1,396 @@
+{
+    "metadata": {
+        "configurationVersions": [3],
+        "clusterVersion": "1.200.99.20200828-133130"
+    },
+    "id": "d29d4134-2d31-473f-bf2b-c7c207637146",
+    "dashboardMetadata": {
+        "name": "Powerup POC",
+        "shared": true,
+        "owner": "lucas.hocker@dynatrace.com",
+        "sharingDetails": {
+            "linkShared": true,
+            "published": true
+        },
+        "dashboardFilter": {
+            "timeframe": ""
+        },
+        "tags": ["!PU(banner):color=#B6E5F8"]
+    },
+    "tiles": [{
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 38,
+            "left": 38,
+            "width": 152,
+            "height": 152
+        },
+        "tileFilter": {},
+        "markdown": "[Extension Needed](https://chrome.google.com/webstore/detail/dynatrace-dashboard-power/dmpgdhbpdodhddciokonbahhbpaalmco)\n\n!PU(svg):icon=sales;link=val1;base=high;warn=20;crit=10"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 38,
+            "left": 266,
+            "width": 152,
+            "height": 152
+        },
+        "tileFilter": {},
+        "markdown": "[Extension Needed](https://chrome.google.com/webstore/detail/dynatrace-dashboard-power/dmpgdhbpdodhddciokonbahhbpaalmco)\n\n!PU(svg):icon=conversions;link=val2;base=low;warn=85;crit=95"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 38,
+            "left": 494,
+            "width": 152,
+            "height": 152
+        },
+        "tileFilter": {},
+        "markdown": "[Extension Needed](https://chrome.google.com/webstore/detail/dynatrace-dashboard-power/dmpgdhbpdodhddciokonbahhbpaalmco)\n\n!PU(svg):icon=creditcard;link=val3;base=high;warn=90;crit=85"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 38,
+            "left": 722,
+            "width": 152,
+            "height": 152
+        },
+        "tileFilter": {},
+        "markdown": "[Extension Needed](https://chrome.google.com/webstore/detail/dynatrace-dashboard-power/dmpgdhbpdodhddciokonbahhbpaalmco)\n\n!PU(svg):icon=blackbox;link=val4;base=high;warn=90;crit=70"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 38,
+            "left": 950,
+            "width": 152,
+            "height": 152
+        },
+        "tileFilter": {},
+        "markdown": "[Extension Needed](https://chrome.google.com/webstore/detail/dynatrace-dashboard-power/dmpgdhbpdodhddciokonbahhbpaalmco)\n\n!PU(svg):icon=revert;link=val5;base=high;warn=0.90;crit=0.70"
+    }, {
+        "name": "",
+        "tileType": "CUSTOM_CHARTING",
+        "configured": true,
+        "bounds": {
+            "top": 532,
+            "left": 0,
+            "width": 228,
+            "height": 228
+        },
+        "tileFilter": {},
+        "filterConfig": {
+            "type": "MIXED",
+            "customName": "CPU usage % !PU(link):val1 !PU(color):base=high;warn=20;crit=5",
+            "defaultName": "Custom chart",
+            "chartConfig": {
+                "legendShown": true,
+                "type": "SINGLE_VALUE",
+                "series": [{
+                    "metric": "builtin:host.cpu.usage",
+                    "aggregation": "AVG",
+                    "type": "LINE",
+                    "entityType": "HOST",
+                    "dimensions": [],
+                    "sortAscending": false,
+                    "sortColumn": true,
+                    "aggregationRate": "TOTAL"
+                }],
+                "resultMetadata": {}
+            },
+            "filtersPerEntityType": {}
+        }
+    }, {
+        "name": "",
+        "tileType": "CUSTOM_CHARTING",
+        "configured": true,
+        "bounds": {
+            "top": 532,
+            "left": 228,
+            "width": 228,
+            "height": 228
+        },
+        "tileFilter": {},
+        "filterConfig": {
+            "type": "MIXED",
+            "customName": "Mem usage % !PU(link):val2 !PU(color):base=low;warn=85;crit=95",
+            "defaultName": "Custom chart",
+            "chartConfig": {
+                "legendShown": true,
+                "type": "SINGLE_VALUE",
+                "series": [{
+                    "metric": "builtin:host.mem.usage",
+                    "aggregation": "AVG",
+                    "type": "LINE",
+                    "entityType": "HOST",
+                    "dimensions": [],
+                    "sortAscending": false,
+                    "sortColumn": true,
+                    "aggregationRate": "TOTAL"
+                }],
+                "resultMetadata": {}
+            },
+            "filtersPerEntityType": {}
+        }
+    }, {
+        "name": "",
+        "tileType": "CUSTOM_CHARTING",
+        "configured": true,
+        "bounds": {
+            "top": 532,
+            "left": 456,
+            "width": 228,
+            "height": 228
+        },
+        "tileFilter": {},
+        "filterConfig": {
+            "type": "MIXED",
+            "customName": "Availability % !PU(link):val3 !PU(color):base=high;warn=95;crit=80",
+            "defaultName": "Custom chart",
+            "chartConfig": {
+                "legendShown": true,
+                "type": "SINGLE_VALUE",
+                "series": [{
+                    "metric": "builtin:synthetic.browser.availability.location.total",
+                    "aggregation": "AVG",
+                    "type": "LINE",
+                    "entityType": "SYNTHETIC_BROWSER_MONITOR",
+                    "dimensions": [],
+                    "sortAscending": false,
+                    "sortColumn": true,
+                    "aggregationRate": "TOTAL"
+                }],
+                "resultMetadata": {}
+            },
+            "filtersPerEntityType": {}
+        }
+    }, {
+        "name": "",
+        "tileType": "CUSTOM_CHARTING",
+        "configured": true,
+        "bounds": {
+            "top": 532,
+            "left": 684,
+            "width": 228,
+            "height": 228
+        },
+        "tileFilter": {},
+        "filterConfig": {
+            "type": "MIXED",
+            "customName": "Conversion Rate !PU(link):val4 !PU(color):base=low;warn=20;crit=30",
+            "defaultName": "Custom chart",
+            "chartConfig": {
+                "legendShown": true,
+                "type": "SINGLE_VALUE",
+                "series": [{
+                    "metric": "builtin:apps.web.conversionRate",
+                    "aggregation": "NONE",
+                    "type": "LINE",
+                    "entityType": "APPLICATION",
+                    "dimensions": [{
+                        "id": "0",
+                        "name": "dt.entity.application",
+                        "values": [],
+                        "entityDimension": true
+                    }, {
+                        "id": "2",
+                        "name": "User type",
+                        "values": ["Real users"],
+                        "entityDimension": false
+                    }],
+                    "sortAscending": false,
+                    "sortColumn": true,
+                    "aggregationRate": "TOTAL"
+                }],
+                "resultMetadata": {}
+            },
+            "filtersPerEntityType": {
+                "APPLICATION": {
+                    "SPECIFIC_ENTITIES": ["APPLICATION-008569CDB300AE03"]
+                }
+            }
+        }
+    }, {
+        "name": "",
+        "tileType": "CUSTOM_CHARTING",
+        "configured": true,
+        "bounds": {
+            "top": 532,
+            "left": 912,
+            "width": 228,
+            "height": 228
+        },
+        "tileFilter": {},
+        "filterConfig": {
+            "type": "MIXED",
+            "customName": "Other KPI !PU(link):val5 !PU(color):base=high;warn=0.90;crit=0.70",
+            "defaultName": "Custom chart",
+            "chartConfig": {
+                "legendShown": true,
+                "type": "SINGLE_VALUE",
+                "series": [{
+                    "metric": "builtin:apps.web.apdex.userType",
+                    "aggregation": "AVG",
+                    "type": "LINE",
+                    "entityType": "APPLICATION",
+                    "dimensions": [],
+                    "sortAscending": false,
+                    "sortColumn": true,
+                    "aggregationRate": "TOTAL"
+                }],
+                "resultMetadata": {}
+            },
+            "filtersPerEntityType": {}
+        }
+    }, {
+        "name": "Revenue",
+        "tileType": "HEADER",
+        "configured": true,
+        "bounds": {
+            "top": 0,
+            "left": 38,
+            "width": 190,
+            "height": 38
+        },
+        "tileFilter": {}
+    }, {
+        "name": "Conversion",
+        "tileType": "HEADER",
+        "configured": true,
+        "bounds": {
+            "top": 0,
+            "left": 266,
+            "width": 190,
+            "height": 38
+        },
+        "tileFilter": {}
+    }, {
+        "name": "Payment",
+        "tileType": "HEADER",
+        "configured": true,
+        "bounds": {
+            "top": 0,
+            "left": 494,
+            "width": 190,
+            "height": 38
+        },
+        "tileFilter": {}
+    }, {
+        "name": "Fulfillment",
+        "tileType": "HEADER",
+        "configured": true,
+        "bounds": {
+            "top": 0,
+            "left": 722,
+            "width": 190,
+            "height": 38
+        },
+        "tileFilter": {}
+    }, {
+        "name": "Returns",
+        "tileType": "HEADER",
+        "configured": true,
+        "bounds": {
+            "top": 0,
+            "left": 950,
+            "width": 190,
+            "height": 38
+        },
+        "tileFilter": {}
+    }, {
+        "name": "",
+        "tileType": "CUSTOM_CHARTING",
+        "configured": true,
+        "bounds": {
+            "top": 228,
+            "left": 0,
+            "width": 1140,
+            "height": 304
+        },
+        "tileFilter": {},
+        "filterConfig": {
+            "type": "MIXED",
+            "customName": "Converted sessions",
+            "defaultName": "Custom chart",
+            "chartConfig": {
+                "legendShown": true,
+                "type": "TIMESERIES",
+                "series": [{
+                    "metric": "builtin:apps.web.converted",
+                    "aggregation": "NONE",
+                    "type": "LINE",
+                    "entityType": "APPLICATION",
+                    "dimensions": [{
+                        "id": "0",
+                        "name": "dt.entity.application",
+                        "values": [],
+                        "entityDimension": true
+                    }],
+                    "sortAscending": false,
+                    "sortColumn": true,
+                    "aggregationRate": "TOTAL"
+                }],
+                "resultMetadata": {
+                    "APPLICATION-E9D5A48C66B161DE¦APPLICATION»APPLICATION-E9D5A48C66B161DE»truebuiltin:apps.web.converted|NONE|TOTAL|LINE|APPLICATION": {
+                        "lastModified": 1598047078291,
+                        "customColor": "#ef651f"
+                    }
+                }
+            },
+            "filtersPerEntityType": {}
+        }
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 76,
+            "left": 1178,
+            "width": 304,
+            "height": 456
+        },
+        "tileFilter": {},
+        "markdown": "## Other power-ups\n\n## \uD83D\uDDFA  [World Map](#dashboard;gtf=l_2_HOURS;gf=all;id=56204b3c-a155-4484-9561-c8d89f896f8d)\n## \uD83D\uDCCA  [USQL Stacked Bar](#dashboard;id=ad695872-56e7-41d2-8af1-24c042d5175b;gtf=l_2_HOURS;gf=all)\n## ♨️ [Heatmap](#dashboard;id=fd6376fd-15e2-491e-a628-2f2a099ca14f;gtf=l_7_DAYS;gf=all)\n## ⫚  Sankey UserAction Flow: \n- [PerfWear Shop](#dashboard;gtf=l_2_HOURS;gf=all;id=ef616e3a-de98-4abe-ab24-f724404d26a3) \n- [Angular ET](#dashboard;gtf=-2h;gf=all;id=b1edf80d-97c2-47b3-9425-cbac6a520317)\n\n## ⍌  [Vertical Funnel](#dashboard;gtf=defaultTimeFrame;gf=defaultManagementZone;id=ac76b4de-b489-4c25-9354-66938d29061b)\n\n## \uD83E\uDDEE [Math](#dashboard;gtf=-2h;gf=all;id=d7e06339-22d2-44a7-9eaf-f4daba116ac3)\n\n## \uD83D\uDCC5  [Date](#dashboard;gtf=-2h;gf=all;id=fa8b177b-4600-4b26-aab2-05db6f77c441)"
+    }, {
+        "name": "Custom chart",
+        "tileType": "CUSTOM_CHARTING",
+        "configured": true,
+        "bounds": {
+            "top": 760,
+            "left": 0,
+            "width": 1140,
+            "height": 342
+        },
+        "tileFilter": {},
+        "filterConfig": {
+            "type": "MIXED",
+            "customName": "Revenue/LoyaltyStatus !PU(line):thld=3900;hcol=green;lcol=red",
+            "defaultName": "Custom chart",
+            "chartConfig": {
+                "legendShown": true,
+                "type": "TIMESERIES",
+                "series": [{
+                    "metric": "calc:service.revenue_loyalitystatus",
+                    "aggregation": "AVG",
+                    "type": "LINE",
+                    "entityType": "SERVICE",
+                    "dimensions": [],
+                    "sortAscending": false,
+                    "sortColumn": true,
+                    "aggregationRate": "TOTAL"
+                }],
+                "resultMetadata": {}
+            },
+            "filtersPerEntityType": {}
+        }
+    }]
+}

@@ -1,0 +1,176 @@
+{
+    "metadata": {
+        "configurationVersions": [3],
+        "clusterVersion": "1.200.99.20200828-133130"
+    },
+    "id": "fa8b177b-4600-4b26-aab2-05db6f77c441",
+    "dashboardMetadata": {
+        "name": "Date PU",
+        "shared": true,
+        "owner": "lucas.hocker@dynatrace.com",
+        "sharingDetails": {
+            "linkShared": true,
+            "published": false
+        },
+        "dashboardFilter": {
+            "timeframe": ""
+        }
+    },
+    "tiles": [{
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 114,
+            "left": 0,
+            "width": 152,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "[Extension Required](https://chrome.google.com/webstore/detail/dynatrace-dashboard-power/dmpgdhbpdodhddciokonbahhbpaalmco)\n\n!PU(date):res=now;fmt=YYYY-MM-DD;color=green"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 114,
+            "left": 190,
+            "width": 152,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "[Extension Required](https://chrome.google.com/webstore/detail/dynatrace-dashboard-power/dmpgdhbpdodhddciokonbahhbpaalmco)\n\n!PU(date):res=now-1d/d;fmt=YYYY-MM-DD;color=green"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 114,
+            "left": 380,
+            "width": 152,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "[Extension Required](https://chrome.google.com/webstore/detail/dynatrace-dashboard-power/dmpgdhbpdodhddciokonbahhbpaalmco)\n\n!PU(date):res=now-7d/d;fmt=YYYY-MM-DD;color=green"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 114,
+            "left": 570,
+            "width": 152,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "[Extension Required](https://chrome.google.com/webstore/detail/dynatrace-dashboard-power/dmpgdhbpdodhddciokonbahhbpaalmco)\n\n!PU(date):res=now-30d/d;fmt=YYYY-MM-DD;color=green"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 190,
+            "left": 0,
+            "width": 152,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "[Extension Required](https://chrome.google.com/webstore/detail/dynatrace-dashboard-power/dmpgdhbpdodhddciokonbahhbpaalmco)\n\n!PU(date):res=now;fmt=MM/DD;color=yellow"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 190,
+            "left": 190,
+            "width": 152,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "[Extension Required](https://chrome.google.com/webstore/detail/dynatrace-dashboard-power/dmpgdhbpdodhddciokonbahhbpaalmco)\n\n!PU(date):res=now-1d/d;fmt=MM/DD;color=yellow"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 190,
+            "left": 380,
+            "width": 152,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "[Extension Required](https://chrome.google.com/webstore/detail/dynatrace-dashboard-power/dmpgdhbpdodhddciokonbahhbpaalmco)\n\n!PU(date):res=now-7d/d;fmt=MM/DD;color=yellow"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 190,
+            "left": 570,
+            "width": 152,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "[Extension Required](https://chrome.google.com/webstore/detail/dynatrace-dashboard-power/dmpgdhbpdodhddciokonbahhbpaalmco)\n\n!PU(date):res=now-30d/d;fmt=MM/DD;color=yellow"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 266,
+            "left": 0,
+            "width": 152,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "[Extension Required](https://chrome.google.com/webstore/detail/dynatrace-dashboard-power/dmpgdhbpdodhddciokonbahhbpaalmco)\n\n!PU(date):res=now;fmt=dddd;color=orange"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 266,
+            "left": 190,
+            "width": 152,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "[Extension Required](https://chrome.google.com/webstore/detail/dynatrace-dashboard-power/dmpgdhbpdodhddciokonbahhbpaalmco)\n\n!PU(date):res=now-1d/d;fmt=dddd;color=orange"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 266,
+            "left": 380,
+            "width": 152,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "[Extension Required](https://chrome.google.com/webstore/detail/dynatrace-dashboard-power/dmpgdhbpdodhddciokonbahhbpaalmco)\n\n!PU(date):res=now-7d/d;fmt=dddd;color=orange"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 266,
+            "left": 570,
+            "width": 152,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "[Extension Required](https://chrome.google.com/webstore/detail/dynatrace-dashboard-power/dmpgdhbpdodhddciokonbahhbpaalmco)\n\n!PU(date):res=now-30d/d;fmt=dddd;color=orange"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 38,
+            "left": 722,
+            "width": 152,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "## [\uD83D\uDD19](#dashboard;gtf=l_2_HOURS;gf=all;id=d29d4134-2d31-473f-bf2b-c7c207637146)"
+    }]
+}

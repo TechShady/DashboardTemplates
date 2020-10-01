@@ -1,0 +1,50 @@
+{
+    "metadata": {
+        "configurationVersions": [3],
+        "clusterVersion": "1.200.99.20200828-133130"
+    },
+    "id": "ad695872-56e7-41d2-8af1-24c042d5175b",
+    "dashboardMetadata": {
+        "name": "USQL stacked bar",
+        "shared": true,
+        "owner": "lucas.hocker@dynatrace.com",
+        "sharingDetails": {
+            "linkShared": true,
+            "published": false
+        },
+        "dashboardFilter": {
+            "timeframe": ""
+        }
+    },
+    "tiles": [{
+        "name": "User Sessions Query",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 0,
+            "left": 0,
+            "width": 1026,
+            "height": 342
+        },
+        "tileFilter": {},
+        "customName": "Conversion by campaign !PU(usqlstack):color=green",
+        "query": "select Datetime(endTime,\"HH:mm\") AS mytime,  count(*) as conversions, usersession.stringProperties.web_utm_campaign as campaign  FROM useraction where application=\"www.angular.easytravel.com\" AND name=\"/easytravel/rest/validate-creditcard\" group by mytime, campaign",
+        "type": "COLUMN_CHART",
+        "visualizationConfig": {
+            "hasAxisBucketing": false
+        },
+        "limit": 50
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 0,
+            "left": 1026,
+            "width": 152,
+            "height": 76
+        },
+        "tileFilter": {},
+        "markdown": "## [\uD83D\uDD19](#dashboard;gtf=l_2_HOURS;gf=all;id=d29d4134-2d31-473f-bf2b-c7c207637146)"
+    }]
+}

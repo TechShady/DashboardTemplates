@@ -1,0 +1,126 @@
+{
+    "metadata": {
+        "configurationVersions": [3],
+        "clusterVersion": "1.200.99.20200828-133130"
+    },
+    "id": "d7e06339-22d2-44a7-9eaf-f4daba116ac3",
+    "dashboardMetadata": {
+        "name": "Math PU",
+        "shared": true,
+        "owner": "lucas.hocker@dynatrace.com",
+        "sharingDetails": {
+            "linkShared": true,
+            "published": false
+        },
+        "dashboardFilter": {
+            "timeframe": ""
+        }
+    },
+    "tiles": [{
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 38,
+            "left": 152,
+            "width": 304,
+            "height": 152
+        },
+        "tileFilter": {},
+        "markdown": "[Extension Required](https://chrome.google.com/webstore/detail/dynatrace-dashboard-power/dmpgdhbpdodhddciokonbahhbpaalmco)\n\n!PU(math):exp=(a+b+c+d)/4;scope=a:varA,b:varB,c:varC,d:varD;color=magenta"
+    }, {
+        "name": "Calculated",
+        "tileType": "HEADER",
+        "configured": true,
+        "bounds": {
+            "top": 38,
+            "left": 0,
+            "width": 152,
+            "height": 38
+        },
+        "tileFilter": {}
+    }, {
+        "name": "User Sessions Query",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 190,
+            "left": 304,
+            "width": 152,
+            "height": 152
+        },
+        "tileFilter": {},
+        "customName": "Bing !PU(link):varA",
+        "query": "select count(*) FROM useraction where usersession.stringProperties.web_utm_source = \"bing\"",
+        "type": "SINGLE_VALUE",
+        "limit": 50
+    }, {
+        "name": "User Sessions Query",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 342,
+            "left": 152,
+            "width": 152,
+            "height": 152
+        },
+        "tileFilter": {},
+        "customName": "Insta !PU(link):varD",
+        "query": "select count(*) FROM useraction where usersession.stringProperties.web_utm_source = \"instagram\"",
+        "type": "SINGLE_VALUE",
+        "limit": 50
+    }, {
+        "name": "User Sessions Query",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 342,
+            "left": 304,
+            "width": 152,
+            "height": 152
+        },
+        "tileFilter": {},
+        "customName": "Facebook !PU(link):varB",
+        "query": "select count(*) FROM useraction where usersession.stringProperties.web_utm_source = \"facebook\"",
+        "type": "SINGLE_VALUE",
+        "limit": 50
+    }, {
+        "name": "User Sessions Query",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 190,
+            "left": 152,
+            "width": 152,
+            "height": 152
+        },
+        "tileFilter": {},
+        "customName": "Google !PU(link):varC",
+        "query": "select count(*) FROM useraction where usersession.stringProperties.web_utm_source = \"google\"",
+        "type": "SINGLE_VALUE",
+        "limit": 50
+    }, {
+        "name": "Sources",
+        "tileType": "HEADER",
+        "configured": true,
+        "bounds": {
+            "top": 190,
+            "left": 0,
+            "width": 152,
+            "height": 38
+        },
+        "tileFilter": {}
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 38,
+            "left": 456,
+            "width": 152,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "## [\uD83D\uDD19](#dashboard;gtf=l_2_HOURS;gf=all;id=d29d4134-2d31-473f-bf2b-c7c207637146)"
+    }]
+}

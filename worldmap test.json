@@ -1,0 +1,89 @@
+{
+    "metadata": {
+        "configurationVersions": [3],
+        "clusterVersion": "1.200.99.20200828-133130"
+    },
+    "id": "56204b3c-a155-4484-9561-c8d89f896f8d",
+    "dashboardMetadata": {
+        "name": "worldmap test",
+        "shared": true,
+        "owner": "lucas.hocker@dynatrace.com",
+        "sharingDetails": {
+            "linkShared": true,
+            "published": false
+        },
+        "dashboardFilter": {
+            "timeframe": ""
+        },
+        "tags": ["!PU(banner):color=purple"]
+    },
+    "tiles": [{
+        "name": "World map",
+        "tileType": "APPLICATION_WORLDMAP",
+        "configured": true,
+        "bounds": {
+            "top": 38,
+            "left": 0,
+            "width": 950,
+            "height": 608
+        },
+        "tileFilter": {},
+        "assignedEntities": ["APPLICATION-008569CDB300AE03"],
+        "metric": "APDEX"
+    }, {
+        "name": "World map",
+        "tileType": "APPLICATION_WORLDMAP",
+        "configured": true,
+        "bounds": {
+            "top": 38,
+            "left": 950,
+            "width": 950,
+            "height": 608
+        },
+        "tileFilter": {},
+        "assignedEntities": ["APPLICATION-008569CDB300AE03"],
+        "metric": "ACTION_COUNT"
+    }, {
+        "name": "User Sessions Query",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 646,
+            "left": 0,
+            "width": 950,
+            "height": 532
+        },
+        "tileFilter": {},
+        "customName": "Revenue !PU(map):color=green;link=Apdex",
+        "query": "select country, Sum(doubleProperties.revenue) AS Revenue FROM usersession Group by country ORDER BY Revenue DESC",
+        "type": "TABLE",
+        "limit": 50
+    }, {
+        "name": "User Sessions Query",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 646,
+            "left": 950,
+            "width": 950,
+            "height": 532
+        },
+        "tileFilter": {},
+        "customName": "FrustratedUsers !PU(map):color=#c41425;link=User actions",
+        "query": "select country, Count(userSessionId) AS \"FrustratedUsers\" FROM usersession WHERE userExperienceScore=\"FRUSTRATED\" Group by country ORDER BY FrustratedUsers DESC",
+        "type": "TABLE",
+        "limit": 50
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 0,
+            "left": 1900,
+            "width": 152,
+            "height": 76
+        },
+        "tileFilter": {},
+        "markdown": "##  [\uD83D\uDD19](#dashboard;gtf=l_2_HOURS;gf=all;id=d29d4134-2d31-473f-bf2b-c7c207637146)"
+    }]
+}

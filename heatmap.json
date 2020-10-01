@@ -1,0 +1,115 @@
+{
+    "metadata": {
+        "configurationVersions": [3],
+        "clusterVersion": "1.200.99.20200828-133130"
+    },
+    "id": "fd6376fd-15e2-491e-a628-2f2a099ca14f",
+    "dashboardMetadata": {
+        "name": "heatmap",
+        "shared": true,
+        "owner": "lucas.hocker@dynatrace.com",
+        "sharingDetails": {
+            "linkShared": true,
+            "published": false
+        },
+        "dashboardFilter": {
+            "timeframe": "-7d to now"
+        }
+    },
+    "tiles": [{
+        "name": "",
+        "tileType": "CUSTOM_CHARTING",
+        "configured": true,
+        "bounds": {
+            "top": 0,
+            "left": 0,
+            "width": 1026,
+            "height": 570
+        },
+        "tileFilter": {},
+        "filterConfig": {
+            "type": "MIXED",
+            "customName": "Apdex (by app) !PU(heatmap):vals=.5,.7,.85,.94;names=Unacceptable,Poor,Fair,Good,Excellent;colors=#dc172a,#ef651f,#ffe11c,#6bcb8b,#2ab06f",
+            "defaultName": "Custom chart",
+            "chartConfig": {
+                "legendShown": true,
+                "type": "TIMESERIES",
+                "series": [{
+                    "metric": "builtin:apps.web.apdex.userType",
+                    "aggregation": "AVG",
+                    "type": "BAR",
+                    "entityType": "APPLICATION",
+                    "dimensions": [{
+                        "id": "0",
+                        "name": "dt.entity.application",
+                        "values": [],
+                        "entityDimension": true
+                    }],
+                    "sortAscending": false,
+                    "sortColumn": true,
+                    "aggregationRate": "TOTAL"
+                }],
+                "resultMetadata": {}
+            },
+            "filtersPerEntityType": {
+                "APPLICATION": {
+                    "SPECIFIC_ENTITIES": ["APPLICATION-A038082C12D23042", "APPLICATION-008569CDB300AE03", "APPLICATION-91A869F0065D216E", "APPLICATION-08EBD5603755FA87", "APPLICATION-EA7C4B59F27D43EB"]
+                }
+            }
+        }
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 0,
+            "left": 1026,
+            "width": 152,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "## [\uD83D\uDD19](#dashboard;gtf=l_2_HOURS;gf=all;id=d29d4134-2d31-473f-bf2b-c7c207637146)"
+    }, {
+        "name": "",
+        "tileType": "CUSTOM_CHARTING",
+        "configured": true,
+        "bounds": {
+            "top": 570,
+            "left": 0,
+            "width": 1026,
+            "height": 570
+        },
+        "tileFilter": {},
+        "filterConfig": {
+            "type": "MIXED",
+            "customName": "Conversion Rate (by app) !PU(heatmap):vals=.04,.1,5,50;names=None,VeryLow,Low,Good,Awesome;colors=#dc172a,#ef651f,#ffe11c,#6bcb8b,#2ab06f",
+            "defaultName": "Custom chart",
+            "chartConfig": {
+                "legendShown": true,
+                "type": "TIMESERIES",
+                "series": [{
+                    "metric": "builtin:apps.web.conversionRate",
+                    "aggregation": "NONE",
+                    "type": "BAR",
+                    "entityType": "APPLICATION",
+                    "dimensions": [{
+                        "id": "0",
+                        "name": "dt.entity.application",
+                        "values": [],
+                        "entityDimension": true
+                    }],
+                    "sortAscending": false,
+                    "sortColumn": true,
+                    "aggregationRate": "TOTAL"
+                }],
+                "resultMetadata": {
+                    "APPLICATION-E9D5A48C66B161DE¦APPLICATION»APPLICATION-E9D5A48C66B161DE»truebuiltin:apps.web.conversionRate|NONE|TOTAL|BAR|APPLICATION": {
+                        "lastModified": 1601142865669,
+                        "customColor": "#debbf3"
+                    }
+                }
+            },
+            "filtersPerEntityType": {}
+        }
+    }]
+}

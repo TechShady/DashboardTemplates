@@ -1,0 +1,60 @@
+{
+    "metadata": {
+        "configurationVersions": [3],
+        "clusterVersion": "1.200.99.20200828-133130"
+    },
+    "id": "ac76b4de-b489-4c25-9354-66938d29061b",
+    "dashboardMetadata": {
+        "name": "Angular funnel",
+        "shared": true,
+        "owner": "lucas.hocker@dynatrace.com",
+        "sharingDetails": {
+            "linkShared": true,
+            "published": false
+        },
+        "dashboardFilter": {
+            "timeframe": ""
+        }
+    },
+    "tiles": [{
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 0,
+            "left": 646,
+            "width": 152,
+            "height": 76
+        },
+        "tileFilter": {},
+        "markdown": "##  [\uD83D\uDD19](#dashboard;gtf=l_2_HOURS;gf=all;id=d29d4134-2d31-473f-bf2b-c7c207637146)"
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 988,
+            "left": 0,
+            "width": 152,
+            "height": 38
+        },
+        "tileFilter": {},
+        "markdown": "!PU(link):funnelinks\n1=#uemapplications/uemuseractionmetrics;uemuserActionId=APPLICATION_METHOD-82980D96B19FC25E\n2=#uemapplications/uemuseractionmetrics;uemuserActionId=APPLICATION_METHOD-6E618D3F8C44505B\n3=#uemapplications/uemuseractionmetrics;uemuserActionId=APPLICATION_METHOD-D899336DA83C9D7F\n4=#uemapplications/uemuseractionmetrics;uemuserActionId=APPLICATION_METHOD-32C2C127D9DD8233"
+    }, {
+        "name": "User Sessions Query",
+        "tileType": "DTAQL",
+        "configured": true,
+        "bounds": {
+            "top": 0,
+            "left": 0,
+            "width": 646,
+            "height": 532
+        },
+        "tileFilter": {},
+        "customName": "Angular UserJourney !PU(funnel):mode=height;small=5;big=20;links=funnelinks",
+        "query": "SELECT FUNNEL(useraction.name=\"/easytravel/rest/journeys/\" AS \"Journeys\", useraction.name=\"/easytravel/rest/locations\" AS \"Locations\", useraction.name=\"/easytravel/rest/login\" AS \"Login\", useraction.name=\"/easytravel/rest/validate-creditcard\" AS \"Validate\") FROM usersession where useraction.application=\"www.angular.easytravel.com\"",
+        "type": "FUNNEL",
+        "timeFrameShift": "dynamic",
+        "limit": 50
+    }]
+}
